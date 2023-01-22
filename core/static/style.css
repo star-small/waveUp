@@ -1,0 +1,32 @@
+    .product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-gap: 20px;
+}
+
+.product {
+  border: 1px solid #ccc;
+  padding: 20px;
+  text-align: center;
+}
+
+.product img {
+  max-width: 100%;
+}
+
+.product-name {
+  margin-top: 10px;
+  font-size: 1.2em;
+}
+
+.product-description {
+  margin-top: 10px;
+  font-size: 0.9em;
+  color: #666;
+}
+
+.product-date {
+  margin-top: 10px;
+  font-size: 0.8em;
+  color: #999;
+}
