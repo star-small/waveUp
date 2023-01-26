@@ -1,6 +1,10 @@
 from django.contrib import admin
-
+from .models import Product, Category
 # Register your models here.
-from .models import  Product
 
-admin.site.register(Product)
+
+class CustomAdmin(admin.ModelAdmin):
+    exclude = ("date", "slug")
+
+admin.site.register(Product, CustomAdmin)
+admin.site.register(Category)

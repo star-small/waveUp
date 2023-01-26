@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Product
+from .models import Product, Category
 from pathlib import Path
 import csv
 import os
@@ -10,37 +10,34 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Create your views here.
 
+def list_to_db():
+    # category, code, vendor_code, name, price, date, description, image, slug
+    # Product.objects.create(**{
+    #     'code': 'ef2wefweew',
+    #     'vendor_code': 'Aweqfwef2A',
+    #     'name': 'led',
+    #     'price': 4000,
+    #     'image': 'product_image/img.png'
+    # })
+    # if not Category.objects.filter(name=data).exists():
+    pass
+
+
+
 def read_from_csv():
     with open(BASE_DIR / "product/file.csv", newline='', encoding="utf-8-sig") as file:
-        columns = csv.reader(file, dialect='excel', delimiter=';', quotechar='|')
-        for data in columns:
-            if data:
-                try:
-                    name = data[0]
-                    price = int(data[1])
-                    date = False if data[2] == "" else datetime.datetime.strptime(data[2], "%d.%m.%Y").date()
-                    description = data[3]
-                    image = "/product_image/" + data[4]
+        rows = list(csv.reader(file, dialect='excel', delimiter=';', quotechar='|'))
+        model_fields = Product._meta.get_fields()[1:-1]
+        for row in rows[1:]:
+            field_values = dict([(model_fields[i].name, row[i]) for i in range(len(row))])
+            print(field_values)
 
-                except:
-                    raise Exception("Wrong csv format")
-                if date:
-                    Product.objects.create(name=name, price=price,
-                                           date=date,
-                                           description=description,
-                                           image=image)
-                else:
-                    Product.objects.create(name=name, price=price,
-                                           description=description,
-                                           image=image)
-            else:
-                continue
-    os.remove(BASE_DIR/"product/file.csv")
+    return rows
+    # os.remove(BASE_DIR/"product/file.csv")
 
 
 def show_products(request):
     products = Product.objects.all()
-    read_from_csv() if os.path.exists(BASE_DIR/"product/file.csv") else None
-    for i in products:
-        print(i.image)
+    rows = read_from_csv() if os.path.exists(BASE_DIR/"product/file.csv") else None
+    list_to_db()
     return render(request, "pages/products.html", context={"products": products})
