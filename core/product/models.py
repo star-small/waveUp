@@ -1,7 +1,7 @@
 from django.db import models
 from django.utils.timezone import now
-
-
+from django.core.exceptions import ValidationError
+from django.utils.translation import gettext_lazy as _
 # Create your models here.
 
 
@@ -19,9 +19,9 @@ class Category(models.Model):
 class Product(models.Model):
     category = models.ForeignKey(
         Category, on_delete=models.CASCADE, null=True)
-    code = models.CharField(max_length=30, unique=True)
+    code = models.CharField(max_length=30, unique=True, null=False)
     vendor_code = models.CharField(
-        max_length=30, unique=True)
+        max_length=30, unique=True, null=False)
     name = models.CharField(max_length=100)
     price = models.IntegerField(default=0)
     date = models.DateTimeField()
@@ -38,9 +38,9 @@ class Product(models.Model):
         self.date = now() if self.date == '' else self.date
         if self.category is None:
             self.category = Category.objects.get(name="undefined")
+        self.full_clean()
 
         super(Product, self).save(*args, **kwargs)
-
     class Meta:
         verbose_name = "Товар"
         verbose_name_plural = 'Товары'
