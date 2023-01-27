@@ -1,5 +1,3 @@
-import random
-
 from django.db import models
 from django.utils.timezone import now
 
@@ -19,9 +17,11 @@ class Category(models.Model):
 
 
 class Product(models.Model):
-    category = models.ForeignKey(Category, on_delete=models.CASCADE, blank=True, null=True)
-    code = models.CharField(max_length=30, default="undefined", unique=True)
-    vendor_code = models.CharField(max_length=30, default="undefined", unique=True)
+    category = models.ForeignKey(
+        Category, on_delete=models.CASCADE, null=True)
+    code = models.CharField(max_length=30, unique=True)
+    vendor_code = models.CharField(
+        max_length=30, unique=True)
     name = models.CharField(max_length=100)
     price = models.IntegerField(default=0)
     date = models.DateTimeField()
@@ -34,8 +34,9 @@ class Product(models.Model):
 
     def save(self, *args, **kwargs):
         self.slug = f"{self.code}_on_{now().strftime('%Y-%m-%d')}"
-        self.date = now()
-        if self.category == '' or self.category is None:
+        print(self.date, "this")
+        self.date = now() if self.date == '' else self.date
+        if self.category is None:
             self.category = Category.objects.get(name="undefined")
 
         super(Product, self).save(*args, **kwargs)
