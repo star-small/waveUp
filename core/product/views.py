@@ -53,5 +53,5 @@ def read_from_csv():
 def show_products(request):
     products = Product.objects.all()
     rows = read_from_csv() if os.path.exists(BASE_DIR/"product/file.csv") else None
-    list_to_db(rows)
+    dict_to_db(rows)
     return render(request, "pages/products.html", context={"products": products})
