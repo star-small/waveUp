@@ -20,7 +20,8 @@ def dict_to_db(values_dict):
     #     'price': 4000,
     #     'image': 'product_image/img.png'
     # })
-    Product.objects.all().delete()
+    Product.objects.filter(from_csv=True).delete()
+    print(values_dict)
     for values in values_dict:
         category = values['category']
         values['date'] = '' if values['date'] == '' else datetime.datetime.strptime(values['date'], "%d %m %Y %H:%M")
@@ -29,7 +30,7 @@ def dict_to_db(values_dict):
         values['category'] = None if category == '' else Category.objects.get(name=category)
         print(values)
 
-        Product.objects.create(**values)
+        Product.objects.create(**values, from_csv=True)
     #print(values)
     #if not Category.objects.filter(name=).exists():
 
@@ -41,7 +42,7 @@ def read_from_csv():
     with open(BASE_DIR / "product/file.csv", newline='', encoding="utf-8-sig") as file:
         rows = list(csv.reader(file, dialect='excel', delimiter=';', quotechar='|'))
 
-        model_fields = Product._meta.get_fields()[1:-1]
+        model_fields = Product._meta.get_fields()[1:-2]
         field_values = []
         for row in rows[1:]:
             field_values.append(dict([(model_fields[i].name, row[i]) for i in range(len(row))]))

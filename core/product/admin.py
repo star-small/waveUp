@@ -4,7 +4,7 @@ from .models import Product, Category
 
 
 class CustomAdmin(admin.ModelAdmin):
-    exclude = ("date", "slug")
+    exclude = ("date", "slug", "from_csv")
 
 admin.site.register(Product, CustomAdmin)
 admin.site.register(Category)

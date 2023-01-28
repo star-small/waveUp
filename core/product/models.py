@@ -24,10 +24,12 @@ class Product(models.Model):
         max_length=30, unique=True, null=False)
     name = models.CharField(max_length=100)
     price = models.IntegerField(default=0)
-    date = models.DateTimeField()
+    date = models.DateTimeField(default=now())
     description = models.TextField(null=True, blank=True)
     image = models.ImageField(upload_to="product_image")
     slug = models.CharField(max_length=100, blank=False)
+    from_csv = models.BooleanField(default=False)
+
 
     def __str__(self):
         return self.name
