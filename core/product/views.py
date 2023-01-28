@@ -11,15 +11,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Create your views here.
 
 def dict_to_db(values_dict):
-    # category, code, vendor_code, name, price, date, description, image, slug
-    # Product.objects.create(**{
-    #     'code': 'ef2wefweew',
-    #     'category': 'efwef',
-    #     'vendor_code': 'ewfwefw',
-    #     'name': 'led',
-    #     'price': 4000,
-    #     'image': 'product_image/img.png'
-    # })
     Product.objects.filter(from_csv=True).delete()
     print(values_dict)
     for values in values_dict:
@@ -31,15 +22,11 @@ def dict_to_db(values_dict):
         print(values)
 
         Product.objects.create(**values, from_csv=True)
-    #print(values)
-    #if not Category.objects.filter(name=).exists():
-
     pass
 
 
-
 def read_from_csv():
-    with open(BASE_DIR / "product/file.csv", newline='', encoding="utf-8-sig") as file:
+    with open(BASE_DIR/"files/file.csv", newline='', encoding="utf-8-sig") as file:
         rows = list(csv.reader(file, dialect='excel', delimiter=';', quotechar='|'))
 
         model_fields = Product._meta.get_fields()[1:-2]
@@ -48,11 +35,15 @@ def read_from_csv():
             field_values.append(dict([(model_fields[i].name, row[i]) for i in range(len(row))]))
 
     return field_values
-    # os.remove(BASE_DIR/"product/file.csv")
 
 
 def show_products(request):
     products = Product.objects.all()
-    rows = read_from_csv() if os.path.exists(BASE_DIR/"product/file.csv") else None
+    rows = read_from_csv() if os.path.exists(BASE_DIR/"files/file.csv") else None
     dict_to_db(rows)
+    return render(request, "pages/products.html", context={"products": products})
+
+
+def filter_by_price(request):
+    products = Product.objects.all().order_by('?')
     return render(request, "pages/products.html", context={"products": products})
