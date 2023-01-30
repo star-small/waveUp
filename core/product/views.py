@@ -20,7 +20,6 @@ def dict_to_db(values_dict):
         values['category'] = None if category == '' else Category.objects.get(name=category)
 
         Product.objects.create(**values, from_csv=True)
-    pass
 
 
 def read_from_csv():
@@ -37,12 +36,12 @@ def read_from_csv():
 
 def show_products(request):
     print("TEST SERVER")
-    products = Product.objects.all()
+    products = Product.objects.all().order_by("date")
     rows = read_from_csv() if os.path.exists(BASE_DIR/"files/file.csv") else None
     dict_to_db(rows)
     return render(request, "pages/products.html", context={"products": products})
 
 
 def filter_by_price(request):
-    products = Product.objects.all().order_by('?')
+    products = Product.objects.all().order_by('-price')
     return render(request, "pages/products.html", context={"products": products})
