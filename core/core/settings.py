@@ -9,9 +9,11 @@ https://docs.djangoproject.com/en/4.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
-
+import os
 from pathlib import Path
-
+from django.core.management.utils import get_random_secret_key
+import mimetypes
+mimetypes.add_type("text/css", ".css", True)
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -20,13 +22,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-za+mph#3^&(pcekta3jv8oeyk2ja3x1c9qg9o1=^)ehk%0ql@^"
-
+#SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", get_random_secret_key())
+SECRET_KEY = "jfd7*_+%5q_9q^iu0zwc0q_%kqz62%)3ojm=vuh^d+1_6j!zu#"
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = []
-
+#DEBUG = os.getenv("DEBUG", "False") == "True"
+DEBUG=True
+ALLOWED_HOSTS = ['localhost']
 
 # Application definition
 
@@ -40,6 +41,10 @@ INSTALLED_APPS = [
     "product"
 ]
 
+
+SESSION_ENGINE = 'django.contrib.sessions.backends.cached_db'
+# SESSION_COOKIE_SECURE = False
+LOGIN_REDIRECT_URL = '/admin/' 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
@@ -118,7 +123,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = "static/"
-STATICFILES_DIRS = [BASE_DIR / "static"]
+STATIC_ROOT = '/home/top/static'
+STATICFILES_DIRS = ( os.path.join('static'), )
 MEDIA_ROOT = "media/"
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field

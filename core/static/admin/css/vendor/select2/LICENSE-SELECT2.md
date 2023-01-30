@@ -1,0 +1,1 @@
+/home/top/waveUp/venv/lib/python3.7/site-packages/django/contrib/admin/static/admin/css/vendor/select2/LICENSE-SELECT2.md

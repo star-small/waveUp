@@ -36,7 +36,6 @@ class Product(models.Model):
 
     def save(self, *args, **kwargs):
         self.slug = f"{self.code}_on_{now().strftime('%Y-%m-%d')}"
-        print(self.date, "this")
         self.date = now() if self.date == '' else self.date
         if self.category is None:
             self.category = Category.objects.get(name="undefined")
