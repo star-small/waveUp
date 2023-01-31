@@ -10,6 +10,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Create your views here.
 
+
+
 def dict_to_db(values_dict):
     Product.objects.filter(from_csv=True).delete()
     for values in values_dict:

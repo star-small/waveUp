@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        background-color: #000000;
+        display: flex;
+        height: 100vh;
+        align-items: top;
+      }
+
+      .glow {
+          z-index: -1;
+        width: 100%;
+        height: 50%;
+        background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255, 0.5) 200%);
+        bottom: 0;
+        position: absolute;
+      }
+      .message {
+        z-index: 1;
+        width: 50%;
+        margin: 0 auto;
+        text-align: left;
+        color: #fff;
+        font-size: 36px;
+        font-weight: bold;
+      }
+
+    </style>
+
+  </head>
+  <body>
+    <div class="glow"></div>
+    <div class="message">
+  Ой! Похоже, вы попали на страницу 404.<br>
+Не волнуйтесь, лампа, которую вы ищете, не потеряется в темноте.<br>
+Вернитесь на нашу
+      <a href="{% url 'show_products'%}">главную страницу</a>, чтобы найти то, что вы ищете.    </div>
+  </body>
+
+</html>

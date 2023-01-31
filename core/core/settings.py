@@ -7,7 +7,7 @@ For more information on this file, see
 https://docs.djangoproject.com/en/4.1/topics/settings/
 
 For the full list of settings and their values, see
-https://docs.djangoproject.com/en/4.1/ref/settings/
+https://docs.djangoproject.com/en/4./1/ref/settings/
 """
 import os
 from pathlib import Path
@@ -26,7 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "jfd7*_+%5q_9q^iu0zwc0q_%kqz62%)3ojm=vuh^d+1_6j!zu#"
 # SECURITY WARNING: don't run with debug turned on in production!
 #DEBUG = os.getenv("DEBUG", "False") == "True"
-DEBUG=True
+DEBUG=False
 ALLOWED_HOSTS = ['localhost']
 
 # Application definition
