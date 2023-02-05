@@ -44,11 +44,6 @@ def read_from_csv():
     return field_values
 
 
-def login_view(request):
-    forms = UserForm()
-    return render(request, "pages/login.html", context={"forms": forms})
-
-
 def show_products(request):
     print("TEST SERVER")
     products = Product.objects.all().order_by("date")
