@@ -1,10 +1,15 @@
 from django.conf.urls.static import static
 from django.conf import settings
-from django.urls import path
+from django.urls import path, include
+from django.contrib.auth import views as auth_views
 from . import views
+
+
 urlpatterns = [
-    path("", views.show_products, name="show_products"),
-    path("filter_by_price", views.filter_by_price)
+    path("", views.show_products, name="products_url"),
+    path("login",
+         auth_views.LoginView.as_view(), name="login_url"),
+    path("product/<slug:slug>/", views.show_product, name="product_url")
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -1,7 +1,7 @@
 from django.db import models
 from django.utils.timezone import now
 from django.core.exceptions import ValidationError
-from django.utils.translation import gettext_lazy as _
+from django.contrib.auth.models import AbstractUser
 # Create your models here.
 
 
@@ -30,7 +30,6 @@ class Product(models.Model):
     slug = models.CharField(max_length=100, blank=False)
     from_csv = models.BooleanField(default=False)
 
-
     def __str__(self):
         return self.name
 
@@ -42,6 +41,7 @@ class Product(models.Model):
         self.full_clean()
 
         super(Product, self).save(*args, **kwargs)
+
     class Meta:
         verbose_name = "Товар"
         verbose_name_plural = 'Товары'

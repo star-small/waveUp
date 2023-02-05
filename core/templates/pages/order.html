@@ -1,0 +1,79 @@
+<html>
+  <head>
+    <style>
+      .card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 400px;
+        height: 700px;
+        background-color: #F0F0F0;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        margin: 100px auto;
+      }
+
+      .card-image {
+        height: 200px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+
+      .card-text {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .card-price {
+        font-size: 20px;
+        color: green;
+        margin-bottom: 20px;
+      }
+
+      .card-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+
+      .card-form input[type="text"],
+      .card-form input[type="email"] {
+        width: 300px;
+        height: 30px;
+        margin-bottom: 10px;
+        padding-left: 10px;
+        border-radius: 5px;
+        border: 1px solid gray;
+      }
+
+      .card-button {
+        background-color: green;
+        color: white;
+        width: 200px;
+        height: 40px;
+        border: none;
+        border-radius: 20px;
+        font-size: 18px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <h1 class="card-text">{{product.name}} </h1>
+      <img class="card-image" src="{{product.image.url}}" alt="Order Image">
+      <p class="card-text">{{product.description}}</p>
+      <p class="card-price">{{product.price}} тенге </p>
+      <form class="card-form">
+        <p>Нужно заполнить минимум одно поле, помимо имени</p>
+        <input type="text" placeholder="Имя">
+        <input type="email" placeholder="Почта">
+        <input type="text" placeholder="Номер телефона">
+        <input type="email" placeholder="Другой способ связи">
+      </form>
+      <button class="card-button">Оформить заказ</button>
+    </div>
+  </body>
+</html>
+

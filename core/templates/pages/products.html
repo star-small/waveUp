@@ -1,29 +1,28 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-       <link rel="stylesheet" href="{% static 'style.css' %}" type="text/css">
-</head>
-<body>
-
-<h1> Hello </h1>
-{% for product in products %}
-<div class="product-grid">
-  <div class="product">
-    <img src="{{product.image.url}}" alt="Product 1">
-    <h3 class="product-name">{{product.name}}</h3>
-      <p class="product-description">{{product.price}}</p>
-
-    <p class="product-description">{{product.description}}</p>
-    <p class="product-date">{{product.date}}</p>
-      <p class="product-date">{{product.category}}</p>
-
-      <button>Buy</button>
-  </div>
-  <!-- More products can be added here -->
-</div>
-{% endfor %}
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <link rel="stylesheet" href="{% static 'style.css' %}" type="text/css">
+    </head>
+    <body>
+        <h1>Hello</h1>
+        {% for product in products %}
+            <div class="product-grid">
+                <div class="product">
+                    <img src="{{ product.image.url }}" alt="Product 1">
+                    <h3 class="product-name">{{ product.name }}</h3>
+                    <p class="product-description">{{ product.price }}</p>
+                    <p class="product-description">{{ product.description }}</p>
+                    <p class="product-date">{{ product.date }}</p>
+                    <p class="product-date">{{ product.category }}</p>
+                    <a href="product/{{ product.slug }}/">
+                        <button>Buy</button>
+                    </a>
+                </div>
+                <!-- More products can be added here -->
+            </div>
+        {% endfor %}
+    </body>
 </html>
