@@ -1,5 +1,5 @@
-venv/*
-.idea/*
+venv/
+.idea/
 core/core/__pycache__/*
 core/product/__pycache__/*
 

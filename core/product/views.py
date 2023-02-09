@@ -44,12 +44,17 @@ def read_from_csv():
     return field_values
 
 
+def show_main(request):
+    products = Product.objects.all().order_by("price")[0:5]
+    print(products)
+    return render(request, "index.html", context={"products": products})
+
+
 def show_products(request):
-    print("TEST SERVER")
     products = Product.objects.all().order_by("date")
     rows = read_from_csv() if os.path.exists(BASE_DIR/"files/file.csv") else None
     dict_to_db(rows)
-    return render(request, "pages/products.html", context={"products": products})
+    return render(request, "pages/catalog.html", context={"products": products})
 
 
 def show_product(request, slug):
