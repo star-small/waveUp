@@ -1,15 +1,14 @@
+from .sheets import write_table
 from pathlib import Path
 import csv
 import os
 import datetime
-from django.shortcuts import render
-from django.contrib.auth.models import User
+from django.shortcuts import render, redirect
+# from django.contrib.auth.models import User
 from .models import Product, Category
-from .forms import UserForm
+# from .forms import UserForm
 from django.utils.timezone import now
 BASE_DIR = Path(__file__).resolve().parent.parent
-
-
 # Create your views here.
 
 
@@ -40,13 +39,18 @@ def read_from_csv():
         for row in rows[1:]:
             field_values.append(
                 dict([(model_fields[i].name, row[i]) for i in range(len(row))]))
-
     return field_values
 
 
 def show_main(request):
     products = Product.objects.all().order_by("price")[0:5]
-    print(products)
+    print(request.method)
+    if request.method == 'POST':
+        data = request.POST
+
+        write_table([[data['name']], [data['phone']], [data['email']],
+                     [data["vendor_code"]], [data["code"]], [data["product_name"]]])
+        return redirect('main_url')
     return render(request, "index.html", context={"products": products})
 
 
@@ -60,3 +64,7 @@ def show_products(request):
 def show_product(request, slug):
     product = Product.objects.get(slug=slug)
     return render(request, "pages/order.html", context={"product": product})
+
+
+def show_policy(request):
+    return render(request, "pages/policy.html")

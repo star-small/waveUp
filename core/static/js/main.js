@@ -5,7 +5,8 @@ function filter_open() {
     arrow_icon.classList.toggle('active');
 }
 
-function modal_open() {
-    var modal_block = document.getElementById('modal_block');
+function modal_open(name) {
+    console.log(name)
+    var modal_block = document.getElementsByName(name)[0];
     modal_block.classList.toggle('active');
 }

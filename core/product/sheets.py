@@ -25,7 +25,7 @@ service = apiclient.discovery.build('sheets', 'v4', http=httpAuth)
 def write_table(val_list):
     resource = {
         "majorDimension": "COLUMNS",
-        "values": list
+        "values": val_list
     }
     range = "!B:B"
     service.spreadsheets().values().append(

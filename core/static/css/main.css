@@ -9,7 +9,9 @@ body{
     --grey-color:#EEEEEE;
     background-color: var(--grey-color);
 }
-
+.img_reg {
+border-radius: 7.21vw 7.21vw 0px 0px;
+}
 p{
     margin: 0;
 }
