@@ -48,9 +48,9 @@ def show_main(request):
     print(request.method)
     if request.method == 'POST':
         data = request.POST
-
+        time = datetime.datetime.now().strftime("%m/%d/%Y %H:%M")
         write_table([[data['name']], [data['phone']], [data['email']],
-                     [data["vendor_code"]], [data["code"]], [data["product_name"]]])
+                     [data["vendor_code"]], [data["code"]], [data["product_name"]], [time]])
         send_mail(data)
         return redirect('main_url')
     return render(request, "index.html", context={"products": products})
