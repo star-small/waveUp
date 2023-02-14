@@ -6,7 +6,7 @@ import apiclient.discovery
 from oauth2client.service_account import ServiceAccountCredentials
 
 from pathlib import Path
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 # Файл, полученный в Google Developer Console
 CREDENTIALS_FILE = BASE_DIR/'files/cred.json'

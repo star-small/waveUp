@@ -1,4 +1,3 @@
-from .sheets import write_table
 from pathlib import Path
 import csv
 import os
@@ -8,6 +7,8 @@ from django.shortcuts import render, redirect
 from .models import Product, Category
 # from .forms import UserForm
 from django.utils.timezone import now
+from .modules.sheets import write_table
+from .modules.mail import send_mail
 BASE_DIR = Path(__file__).resolve().parent.parent
 # Create your views here.
 
@@ -50,6 +51,7 @@ def show_main(request):
 
         write_table([[data['name']], [data['phone']], [data['email']],
                      [data["vendor_code"]], [data["code"]], [data["product_name"]]])
+        send_mail(data)
         return redirect('main_url')
     return render(request, "index.html", context={"products": products})
 
