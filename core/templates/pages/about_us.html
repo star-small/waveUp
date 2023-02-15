@@ -1,0 +1,172 @@
+{% extends '../base.html' %}
+{% load static %}
+{% block title %}Novella Electric | О нас{% endblock %}
+{% block video %}
+    <!--Video Modal Block-->
+    <div class="video_modal" id="video_modal">
+        <div class="video_modal__inner">
+            <button onclick="video_open(99)"></button>
+            <video id="video_first" controls src="{% static 'video/test1.mp4' %}">
+            </video>
+            <video id="video_second" controls>
+                <source src="{% static 'video/test2.mp4' %}">
+            </video>
+            <video id="video_third" controls>
+                <source src="{% static 'video/test3.mp4' %}">
+            </video>
+        </div>
+    </div>
+    <!--------------------->
+{% endblock %}
+{% block body %}
+    <div data-aos="fade-right" class="row about_us_block">
+        <div class="col-xl-12">
+            <h3 class="font-size_medium mobile_font-size_big">О нас</h3>
+            <div class="about_us_block__dest d-none d-xl-flex">
+                Novella Electric - это компания по продаже
+                электротехники, нашей целью является предоставление
+                качественного продукта за приемлемые цены.
+                <br>
+                Мы предлагает вам широкий выбор
+                электротехники, который поможет вам создать
+                ремонт мечты, от бизнес помещений с современным и
+                удобным дизайном и универсальным освещением, до
+                уютных, тёплых квартир и домов.
+            </div>
+            <div class="about_us_block__dest d-flex d-xl-none">
+                Мы предлагает вам широкий выбор
+                <br>
+                электротехники, который поможет вам создать
+                <br>
+                ремонт мечты, от бизнес помещений с современным и
+                удобным дизайном и универсальным освещением, до
+                уютных, тёплых квартир и домов.
+            </div>
+        </div>
+    </div>
+    <div data-aos="fade-down" class="row video_block">
+        <div class="col-12 col-xl-12 about_us__video pdng-width">
+            <section class="splide">
+                <div class="splide__track">
+                    <ul class="splide__list">
+                        <li class="splide__slide">
+                            <button onclick="video_open(1)" class="video_button"></button>
+                        </li>
+                        <li class="splide__slide">
+                            <button onclick="video_open(2)" class="video_button"></button>
+                        </li>
+                        <li class="splide__slide">
+                            <button onclick="video_open(3)" class="video_button"></button>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+    </div>
+    <div class="row benefint__block pdng-width d-none d-xl-flex">
+        <div data-aos="fade-right"
+             class="col-6 col-xl-6 benefint__block_lamp-light">
+            <img src="{% static 'img/lamp_light.png' %}" alt="">
+        </div>
+        <div data-aos="fade-left" class="col-6 col-xl-6 benefits__list">
+            <div class="font-size_regular font-weight_regular margin-bottom">
+                Novella Electric - предлагает вам широкий выбор
+                электротехники, который поможет вам создать
+                ремонт мечты, от бизнес помещений с современным и
+                удобным дизайном и универсальным освещением, до
+                уютных, тёплых квартир и домов.
+            </div>
+            <div>
+                <h3 class="font-weight_medium">Наши преимущества</h3>
+                <li class="benefits__inner">
+                    <img class="icon_plus" src="{% static 'img/icon/plus.svg' %}" alt="">
+                    <a class="black-color mobile_font-size_regular" href="">Европейское качество - это строгое производство, по самым высоким требованиям соблюдениям техники выполнения работ.</a>
+                </li>
+                <li class="benefits__inner">
+                    <img class="icon_plus" src="{% static 'img/icon/plus.svg' %}" alt="">
+                    <a class="black-color mobile_font-size_regular" href="">Цена - Компания предоставляет крупный выбор средне-бюджетной техники. Наши цены отражают и соответствуют качеству продукта.</a>
+                </li>
+                <li class="benefits__inner">
+                    <img class="icon_plus" src="{% static 'img/icon/plus.svg' %}" alt="">
+                    <a class="black-color mobile_font-size_regular" href="">Гарантии - Наш товар имеет европейские сертификаты о соответствии евростандарту.</a>
+                </li>
+            </div>
+        </div>
+    </div>
+    <div class="row benefint__block pdng-width d-flex d-xl-none">
+        <div da class="col-6 col-xl-6 benefint__block_lamp-light">
+            <img src="{% static 'img/lamp_light.png' %}" alt="">
+        </div>
+        <div class="col-6 col-xl-6 benefits__list">
+            <div class="font-size_regular mobile_font-size_light font-weight_regular margin-bottom">
+                Novella Electric - предлагает вам широкий выбор
+                электротехники, который поможет вам создать
+                ремонт мечты, от бизнес помещений с современным и
+                удобным дизайном и универсальным освещением, до
+                уютных, тёплых квартир и домов.
+            </div>
+        </div>
+        <div class="col-12 benefits__icon_list">
+            <h3 class="font-weight_medium">Наши преимущества</h3>
+            <li class="benefits__inner">
+                <img class="icon_plus" src="{% static '/img/icon/plus.svg' %}" alt="">
+                <a class="black-color mobile_font-size_light" href="">Европейское качество - это строгое производство, по самым высоким требованиям соблюдениям техники выполнения работ.</a>
+            </li>
+            <li class="benefits__inner">
+                <img class="icon_plus" src="{% static '/img/icon/plus.svg' %}" alt="">
+                <a class="black-color mobile_font-size_light"  href="">Цена - Компания предоставляет крупный выбор средне-бюджетной техники. Наши цены отражают и соответствуют качеству продукта.</a>
+            </li>
+            <li class="benefits__inner">
+                <img class="icon_plus" src="{% static '/img/icon/plus.svg' %}" alt="">
+                <a class="black-color mobile_font-size_light" href="">Гарантии - Наш товар имеет европейские сертификаты о соответствии евростандарту.</a>
+            </li>
+        </div>
+    </div>
+    <!--How we work block!-->
+    <div class="row howwework_block">
+        <div data-aos="fade-right" class="col-12 col-xl-6 border-right">
+            <div class="howwework_block__inner">
+                <h3 class="font-weight_medium">О наших товарах</h3>
+                <div>
+                    Наше собственное производство позволяет контролировать качество и цену продукта. Также оно отвечает евростандарту, что позволяет уменьшить количество брака, в дополнении мы предоставляем европейский сертификат качества к каждому товару.
+                </div>
+            </div>
+        </div>
+        <hr class="d-flex d-xl-none">
+        <div data-aos="fade-left" class="col-12 col-xl-6" id="sec">
+            <div class="howwework_block__inner">
+                <h3 class="font-weight_medium">Как мы ведём свою работу</h3>
+                <div>
+                    Мы работаем в большей части стран СНГ. Мы стремимся к идеалу по соотношению цена/качество, поэтому мы имеем собственное производство, которое, позволяет развиваться и прогрессировать в этом направлени.
+                </div>
+            </div>
+        </div>
+    </div>
+    <!---------------------->
+    <div class="row map_block">
+        <div data-aos="fade-down" class="col-12 col-xl-12">
+            <p class="font-weight_medium mobile_font-size_big font-size_header">Наши магазины</p>
+        </div>
+        <div class="col-12 col-xl-12 map_block__inner">
+            <div class="map_block__google">
+                <iframe data-aos="fade-right"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d610.8062238673697!2d76.85233555761019!3d43.26189083436732!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38836b8aa35909ff%3A0x56de01aa983904!2z0JHQsNC60L7RgNC00LAg0KHRgtGA0L7QuSDQodC40YLQuA!5e0!3m2!1sru!2skz!4v1675788901719!5m2!1sru!2skz"
+                        width="600"
+                        height="450"
+                        style="border:0"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <div data-aos="fade-left" class="map_block__adress_list">
+                    <li>
+                        <a class="font-size_specific mobile_font-size_semi_regular font-weight_medium"
+                           href="https://goo.gl/maps/phCLkgbMNvENTPTn9">г. Алматы,
+                            <br>
+                        ТД Бакорда Строй Сити</a>
+                    </li>
+                    <a class="open_map" href="https://goo.gl/maps/phCLkgbMNvENTPTn9">Открыть карту</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

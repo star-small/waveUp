@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novella Electric | О нас</title>
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/splide.min.css">
+    <link rel="stylesheet" href="../css/aos.css">
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/splide.min.js"></script>
+    <script src="../js/aos.js"></script>
+</head>
+<body>
+
+<!--Modal block-->
+<div class="modal_order" id="modal_block">
+    <div class="modal_order__inner">
+        <button onclick="modal_open()"><img src="../img/icon/cancel_icon.svg" alt=""></button>
+        <h4>Оставьте заявку для заказа!</h4>
+        <form action="">
+            <input class="mobile_font-size_big" type="text" name="name" id="" placeholder="Ваше имя" required>
+            <input class="mobile_font-size_big" type="email" name="email" id="" placeholder="Почта">
+            <input class="mobile_font-size_big" type="tel" name="phone" id="" placeholder="Номер телефона" required>
+            <input class="mobile_font-size_big" type="submit" value="Отправить">  
+        </form>
+    </div>
+</div>
+<!--------------->
+<!--Video Modal Block-->
+<div class="video_modal" id="video_modal">
+    
+    <div class="video_modal__inner">
+        <button onclick="video_open(99)"></button>
+        <video id="video_first" controls src="../video/test1.mp4"></video>
+        <video id="video_second" controls><source src="../video/test2.mp4"></video>
+        <video id="video_third" controls><source src="../video/test3.mp4"></video>
+    </div>
+</div>
+<!--------------------->
+
+    <div class="container-fluid main_screen">
+        <div data-aos="fade-down" class="row header pdng-width">
+            <div class="col-xl-4 d-none d-xl-flex logo_block">
+                <a href="../index.html"><img src="../img/icon/logo.svg" alt=""></a>
+            </div>
+            <div class="col-12 d-flex d-xl-none burger_block">
+                
+                <div class="burger_block__inner" id="burger_block">
+                    <input class="checkbox" type="checkbox" name="" id="" />
+                    <div class="hamburger-lines">
+                      <span class="line line1"></span>
+                      <span class="line line2"></span>
+                      <span class="line line3"></span>
+                    </div>  
+                  <div class="menu-items">
+                    <li><a class="font-weight_semibold mobile_font-size_huge" href="../index.html">Главная</a></li>
+                    <li><a class="font-weight_semibold mobile_font-size_huge" href="catalog.html">Каталог</a></li>
+                    <li><a class="font-weight_semibold mobile_font-size_huge" href="about_us.html">О нас</a></li>
+                    <li><a class="font-weight_semibold mobile_font-size_huge" href="contacts.html">Контакты</a></li>
+                    <button onclick="modal_open()" class="mobile_font-size_huge font-weight_bold">Заказать</button>
+                </div>
+                </div>
+                
+            </div>
+            <div class="col-xl-4 d-none d-xl-flex menu">
+                <li>
+                    <a class="font-size_small font-weight_regular" href="catalog.html">Каталог</a>
+                    <a class="font-size_small font-weight_regular margin-side" href="about_us.html">О нас</a>
+                    <a class="font-size_small font-weight_regular" href="contacts.html">Контакты</a>
+                </li>
+            </div>
+            <div class="col-xl-4 d-none d-xl-flex order_block">
+                <button onclick="modal_open()" class="font-size_small font-weight_bold">Заказать</button>
+            </div>
+        </div>
+
+        <div data-aos="fade-right" class="row about_us_block">
+            <div class="col-xl-12">
+                <h3 class="font-size_medium mobile_font-size_big">О нас</h3>
+                <div class="about_us_block__dest d-none d-xl-flex">
+                Novella Electric - это компания по продаже
+                электротехники, нашей целью является предоставление
+                качественного продукта за приемлемые цены.
+                <br>
+                Мы предлагает вам широкий выбор
+                электротехники, который поможет вам создать
+                ремонт мечты, от бизнес помещений с современным и
+                удобным дизайном и универсальным освещением, до
+                уютных, тёплых квартир и домов.
+                </div>
+                <div class="about_us_block__dest d-flex d-xl-none">
+                Мы предлагает вам широкий выбор<br>
+                электротехники, который поможет вам создать<br>
+                ремонт мечты, от бизнес помещений с современным и
+                удобным дизайном и универсальным освещением, до
+                уютных, тёплых квартир и домов.
+                </div>
+
+            </div>
+        </div>
+        <div data-aos="fade-down" class="row video_block">
+            <div class="col-12 col-xl-12 about_us__video pdng-width">
+                <section class="splide">
+                    <div class="splide__track">
+                          <ul class="splide__list">
+                              <li class="splide__slide"><button onclick="video_open(1)" class="video_button"></button></li>
+                              <li class="splide__slide"><button onclick="video_open(2)" class="video_button"></button></li>
+                              <li class="splide__slide"><button onclick="video_open(3)" class="video_button"></button></li>
+                          </ul>
+                    </div>
+                  </section>
+            </div>
+        </div>
+
+        <div class="row benefint__block pdng-width d-none d-xl-flex">
+            <div data-aos="fade-right" class="col-6 col-xl-6 benefint__block_lamp-light">
+                <img src="../img/lamp_light.png" alt="">
+            </div>
+            <div data-aos="fade-left" class="col-6 col-xl-6 benefits__list">
+                <div class="font-size_regular font-weight_regular margin-bottom">Novella Electric - предлагает вам широкий выбор
+                    электротехники, который поможет вам создать
+                    ремонт мечты, от бизнес помещений с современным и
+                    удобным дизайном и универсальным освещением, до
+                    уютных, тёплых квартир и домов.
+                    </div>
+                <div>
+                    <h3 class="font-weight_medium">Наши преимущества</h3>
+                    <li class="benefits__inner">
+                        <img class="icon_plus" src="img/icon/plus.svg" alt=""><a class="black-color mobile_font-size_regular" href="">Европейское качество - это строгое производство, по самым высоким требованиям соблюдениям техники выполнения работ.</a>
+                    </li>
+                    <li class="benefits__inner">
+                        <img class="icon_plus" src="img/icon/plus.svg" alt=""><a class="black-color mobile_font-size_regular" href="">Цена - Компания предоставляет крупный выбор средне-бюджетной техники. Наши цены отражают и соответствуют качеству продукта.</a>
+                    </li>
+                    <li class="benefits__inner">
+                        <img class="icon_plus" src="img/icon/plus.svg" alt=""><a class="black-color mobile_font-size_regular" href="">Гарантии - Наш товар имеет европейские сертификаты о соответствии евростандарту.</a>
+                    </li>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row benefint__block pdng-width d-flex d-xl-none">
+            <div da class="col-6 col-xl-6 benefint__block_lamp-light">
+                <img src="../img/lamp_light.png" alt="">
+            </div>
+            <div class="col-6 col-xl-6 benefits__list">
+                <div class="font-size_regular mobile_font-size_light font-weight_regular margin-bottom">Novella Electric - предлагает вам широкий выбор
+                    электротехники, который поможет вам создать
+                    ремонт мечты, от бизнес помещений с современным и
+                    удобным дизайном и универсальным освещением, до
+                    уютных, тёплых квартир и домов.
+                </div>
+            </div>
+            <div class="col-12 benefits__icon_list">
+                <h3 class="font-weight_medium">Наши преимущества</h3>
+                    <li class="benefits__inner">
+                        <img class="icon_plus" src="../img/icon/plus.svg" alt=""><a class="black-color mobile_font-size_light" href="">Европейское качество - это строгое производство, по самым высоким требованиям соблюдениям техники выполнения работ.</a>
+                    </li>
+                    <li class="benefits__inner">
+                        <img class="icon_plus" src="../img/icon/plus.svg" alt=""><a class="black-color mobile_font-size_light"  href="">Цена - Компания предоставляет крупный выбор средне-бюджетной техники. Наши цены отражают и соответствуют качеству продукта.</a>
+                    </li>
+                    <li class="benefits__inner">
+                        <img class="icon_plus" src="../img/icon/plus.svg" alt=""><a class="black-color mobile_font-size_light" href="">Гарантии - Наш товар имеет европейские сертификаты о соответствии евростандарту.</a>
+                    </li>
+            </div>
+        </div>
+
+        <!--How we work block!-->
+
+        <div class="row howwework_block">
+            <div data-aos="fade-right" class="col-12 col-xl-6 border-right">
+                <div class="howwework_block__inner">
+                    <h3 class="font-weight_medium">О наших товарах</h3>
+                    <div>
+                        Наше собственное производство позволяет контролировать качество и цену продукта. Также оно отвечает евростандарту, что позволяет уменьшить количество брака, в дополнении мы предоставляем европейский сертификат качества к каждому товару.
+                    </div>
+                </div>
+            </div>
+            <hr class="d-flex d-xl-none">
+            <div data-aos="fade-left" class="col-12 col-xl-6" id="sec">
+                <div class="howwework_block__inner">
+                <h3 class="font-weight_medium">Как мы ведём свою работу</h3>
+                <div>
+                    Мы работаем в большей части стран СНГ. Мы стремимся к идеалу по соотношению цена/качество, поэтому мы имеем собственное производство, которое, позволяет развиваться и прогрессировать в этом направлени.
+                </div>
+                </div>
+            </div>
+        </div>
+
+        <!---------------------->
+        
+        <div class="row map_block">
+            <div data-aos="fade-down" class="col-12 col-xl-12">
+                <p class="font-weight_medium mobile_font-size_big font-size_header">Наши магазины</p>
+            </div>
+            <div class="col-12 col-xl-12 map_block__inner">
+                <div class="map_block__google">
+                    <iframe data-aos="fade-right" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d610.8062238673697!2d76.85233555761019!3d43.26189083436732!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38836b8aa35909ff%3A0x56de01aa983904!2z0JHQsNC60L7RgNC00LAg0KHRgtGA0L7QuSDQodC40YLQuA!5e0!3m2!1sru!2skz!4v1675788901719!5m2!1sru!2skz" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <div data-aos="fade-left" class="map_block__adress_list">
+                        <li><a class="font-size_specific mobile_font-size_semi_regular font-weight_medium" href="https://goo.gl/maps/phCLkgbMNvENTPTn9">г. Алматы,<br>ТД Бакорда Строй Сити</a></li>
+                        <a class="open_map" href="https://goo.gl/maps/phCLkgbMNvENTPTn9">Открыть карту</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div data-aos="fade-up" class="row footer">
+            <div class="col-6 col-xl-5 footer_logo">
+                <img src="../img/icon/logo_full_orng.svg" alt="">
+                <div class="footer__policy">
+                    <p class="font-size_tiny font-weight_light mobile_font-size_light">Все права защищены</p>
+                    <a class="font-size_tiny font-weight_light mobile_font-size_light" href="policy.html">Политика конфиденциальности</a>
+                    <a class="font-size_tiny font-weight_light wave_up mobile_font-size_light" href="">Сделано студией WAVEUP</a>
+                </div>
+                <div class="footer_menu__inner d-flex d-xl-none">
+                    <h4 class="font-weight_bold mobile_font-size_light margin-bottom">О нас</h4>
+                    <a class="font-weight_light mobile_font-size_light" href="contacts.html">Контакты</a>
+                </div>
+            </div>
+            <div class="col-6 col-xl-7 footer_menu">
+                <div class="footer_menu__inner">
+                    <h4 class="font-weight_bold margin-bottom mobile_font-size_light">Наши магазины</h4>
+                    <li>
+                        <a class="font-weight_light mobile_font-size_light" href="https://goo.gl/maps/phCLkgbMNvENTPTn9">г. Алматы,<br class="d-none d-xl-flex">ТД Бакорда Строй Сити</a>
+                    </li>
+                </div>
+                <div class="footer_menu__inner margin-side">
+                    <h4 class="font-weight_bold mobile_font-size_light margin-bottom">Каталог</h4>
+                    <a class="font-weight_light mobile_font-size_light" href="catalog.html">Весь каталог</a>
+                </div>
+                <div class="footer_menu__inner d-none d-xl-flex">
+                    <h4 class="font-weight_bold margin-bottom">О нас</h4>
+                    <a class="font-weight_light" href="contacts.html">Контакты</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var pages_number = 3;
+        if (window.screen.width <= 1023){
+            pages_number = 2;
+        }
+        var splide = new Splide( '.splide', {
+          perPage: pages_number,
+          rewind : true,
+        } );
+        
+        splide.mount();
+        
+        </script>
+
+    <!--Animation Scroll-->
+<script>
+    AOS.init({
+        disable: function() {
+    var maxWidth = 800;
+    return window.innerWidth < maxWidth;
+  }
+    });
+
+</script>
+<!-------------------->
+</body>
+</html>

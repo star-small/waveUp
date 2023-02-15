@@ -48,6 +48,7 @@ def show_main(request):
     print(request.method)
     if request.method == 'POST':
         data = request.POST
+        print(data)
         time = datetime.datetime.now().strftime("%m/%d/%Y %H:%M")
         write_table([[data['name']], [data['phone']], [data['email']],
                      [data["vendor_code"]], [data["code"]], [data["product_name"]], [time]])
@@ -60,7 +61,31 @@ def show_products(request):
     products = Product.objects.all().order_by("date")
     rows = read_from_csv() if os.path.exists(BASE_DIR/"files/file.csv") else None
     dict_to_db(rows)
+
+    print(request.method)
+    if request.method == 'POST':
+        data = request.POST
+        print(data)
+        time = datetime.datetime.now().strftime("%m/%d/%Y %H:%M")
+        write_table([[data['name']], [data['phone']], [data['email']],
+                     [data["vendor_code"]], [data["code"]], [data["product_name"]], [time]])
+        send_mail(data)
+        return redirect('main_url')
+
     return render(request, "pages/catalog.html", context={"products": products})
+
+
+def show_contacts(request):
+
+    if request.method == 'POST':
+        data = request.POST
+        print(data)
+        time = datetime.datetime.now().strftime("%m/%d/%Y %H:%M")
+        write_table([[data['name']], [data['phone']], [data['email']],
+                     [data["vendor_code"]], [data["code"]], [data["product_name"]], [time]])
+        send_mail(data)
+        return redirect('main_url')
+    return render(request, "pages/contacts.html")
 
 
 def show_product(request, slug):
@@ -70,3 +95,7 @@ def show_product(request, slug):
 
 def show_policy(request):
     return render(request, "pages/policy.html")
+
+
+def show_about_us(request):
+    return render(request, "pages/about_us.html")
