@@ -72,9 +72,10 @@ h4{
 .font-weight_semibold{font-weight: 600;}
 .font-weight_bold{font-weight: 700;}
 
-.img_reg{
+.img_reg {
     width: 10.15vw;
     height: 10.15vw;
+    border-radius: 7.21vw 7.21vw 0px 0px;
 }
 
 .link_yellow{
@@ -713,9 +714,9 @@ h4{
     border-bottom: 1px solid var(--white-color);
 }
 
-.catalog_block__block{
+.catalog_block__block {
     margin: 5.36vw 0 0 0;
-    display: flex;
+    display: block;
     align-items: flex-start;
 }
 
@@ -737,9 +738,9 @@ h4{
     margin: 5.36vw 0 0 0;
 }
 
-.catalog_block .product{
-    display: inline-block;
-    margin: 0 2.60vw 5.36vw 0;
+.catalog_block .product {
+    display: inline-flex;
+    margin: 0 2.6vw 5.36vw 0;
     padding: 1.45vw 1.14vw 1.45vw;
     height: auto;
 }
@@ -1502,9 +1503,10 @@ h4{font-size: calc(20vw / 3.9);}
     height: 60%;
 }
 
-.product_img img{
+.product_img img {
     width: 90%;
     height: 90%;
+    border-radius: 35.51vw 35.51vw 0px 0px;
 }
 
 .contact_block{

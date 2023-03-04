@@ -70,8 +70,8 @@
                   <div class="menu-items">
                     <li><a class="font-weight_semibold mobile_font-size_huge" href="">Главная</a></li>
                     <li><a class="font-weight_semibold mobile_font-size_huge" href="{% url 'catalog_url' %}">Каталог</a></li>
-                    <li><a class="font-weight_semibold mobile_font-size_huge" href="">О нас</a></li>
-                    <li><a class="font-weight_semibold mobile_font-size_huge" href="pages/contacts.html">Контакты</a></li>
+                    <li><a class="font-weight_semibold mobile_font-size_huge" href="{% url 'about_us_url' %}">О нас</a></li>
+                    <li><a class="font-weight_semibold mobile_font-size_huge" href="{% url  'contacts_url' %}">Контакты</a></li>
                     <button onclick="modal_open()" class="mobile_font-size_huge font-weight_bold">Заказать</button>
                 </div>
                 </div>
@@ -80,8 +80,8 @@
             <div class="col-xl-4 d-none d-xl-flex menu">
                 <li>
                     <a class="font-size_small font-weight_regular" href="{%url 'catalog_url' %} ">Каталог</a>
-                    <a class="font-size_small font-weight_regular margin-side" href="pages/about_us.html">О нас</a>
-                    <a class="font-size_small font-weight_regular" href="pages/contacts.html">Контакты</a>
+                    <a class="font-size_small font-weight_regular margin-side" href="{% url 'about_us_url' %}">О нас</a>
+                    <a class="font-size_small font-weight_regular" href="{% url 'contacts_url' %}">Контакты</a>
                 </li>
             </div>
             <div class="col-xl-4 d-none d-xl-flex order_block">
