@@ -738,6 +738,12 @@ h4{
     margin: 5.36vw 0 0 0;
 }
 
+.product .product_description  {
+text-decoration: line-through;
+    opacity: 90%;
+}
+
+
 .catalog_block .product {
     display: inline-flex;
     margin: 0 2.6vw 5.36vw 0;
