@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Страница не найдена | Novella Electric</title>
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/main.js"></script>
+</head>
+<body id="error">
+
+<!--Modal block-->
+    <div class="modal_order" id="modal_block">
+        <div class="modal_order__inner">
+            <button onclick="modal_open()"><img src="../img/icon/cancel_icon.svg" alt=""></button>
+            <h4>Оставьте заявку для заказа!</h4>
+            <form action="">
+                <input type="text" name="name" id="" placeholder="Ваше имя" required>
+                <input type="email" name="email" id="" placeholder="Почта">
+                <input type="tel" name="phone" id="" placeholder="Номер телефона" required>
+                <input type="submit" value="Отправить">  
+            </form>
+        </div>
+    </div>
+<!--------------->
+
+    <div class="container-fluid main_screen" id="error"> 
+        <div class="row header pdng-width" id="error">
+            <div class="col-xl-4 logo_block">
+                <a href="../index.html"><img src="../img/icon/logo.svg" alt=""></a>
+            </div>
+            <div class="col-xl-4 menu">
+                <li>
+                    <a class="font-size_small font-weight_regular" href="catalog.html">Каталог</a>
+                    <a class="font-size_small font-weight_regular margin-side" href="about_us.html">О нас</a>
+                    <a class="font-size_small font-weight_regular" href="contacts.html">Контакты</a>
+                </li>
+            </div>
+            <div class="col-xl-4 order_block">
+                <button onclick="modal_open()" class="font-size_small font-weight_bold">Заказать</button>
+            </div>
+        </div>
+        
+        <div class="row error_block">
+            <div class="col-xl-6 error_img">
+                <img src="../img/404.png" alt="">
+            </div>
+            <div class="col-xl-6 error_p">
+                <div>
+                <p class="font-size_giant font-weight_bold link_yellow">Страница не найдена</p>
+                <a class="font-size_big font-weight_regular black-color" href="">Повторите попытку позже</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row footer margin-top">
+            <div class="col-xl-5 footer_logo">
+                <img src="../img/icon/logo_full_orng.svg" alt="">
+                <div class="footer__policy">
+                    <p class="font-size_tiny font-weight_light">Все права защищены</p>
+                    <a class="font-size_tiny font-weight_light" href="">Политика конфиденциальности</a>
+                </div>
+            </div>
+            <div class="col-xl-7 footer_menu">
+                <div class="footer_menu__inner">
+                    <h4 class="font-weight_bold margin-bottom">Наши магазины</h4>
+                    <li>
+                        <a class="font-weight_light" href="https://goo.gl/maps/phCLkgbMNvENTPTn9">г. Алматы,<br>ТД Бакорда Строй Сити</a>
+                    </li>
+                </div>
+                <div class="footer_menu__inner margin-side">
+                    <h4 class="font-weight_bold margin-bottom">Каталог</h4>
+                    <a class="font-weight_light" href="">Весь каталог</a>
+                </div>
+                <div class="footer_menu__inner">
+                    <h4 class="font-weight_bold margin-bottom">О нас</h4>
+                    <a class="font-weight_light" href="">Контакты</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
