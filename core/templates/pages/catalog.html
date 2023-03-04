@@ -1,26 +1,109 @@
-{% extends "../base.html" %}
 {% load static %}
-{% block video %}
-    <div class="filter_block d-none d-xl-flex" id="filter_block">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novella Electric | Главная</title>
+    <link rel="shortcut icon" href="{%static 'favicon.ico' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/splide.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/aos.css' %}" type="text/css">
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+    <script src="{% static 'js/splide.min.js' %}"></script>
+    <script src="{% static 'js/aos.js' %}"></script>
+</head>
+<body>
+
+<!--Modal block-->
+<div class="modal_order" id="modal_block">
+    <div class="modal_order__inner">
+        <button onclick="modal_open()"><img src=" {% static 'img/icon/cancel_icon.svg' %}" alt=""></button>
+        <h4>Оставьте заявку для заказа!</h4>
+        <p id="modal_order__status" class=" mobile_font-size_big">Успешно отправлено!</p>
+        <form method="POST" id="modal_form" action="">
+        {% csrf_token %}
+            <input type="hidden" name="vendor_code" value="" />
+            <input type="hidden" name="code" value="" />
+            <input type="hidden" name="product_name" value="" />
+            <input class="mobile_font-size_big" type="text" name="name" id="" placeholder="Ваше имя" required>
+            <input class="mobile_font-size_big" type="email" name="email" id="" placeholder="Почта">
+            <input class="mobile_font-size_big" type="tel" name="phone" id="" placeholder="Номер телефона" required>
+            <input class="mobile_font-size_big" type="submit" value="Отправить">
+        </form>
+    </div>
+</div>
+<!--------------->
+
+
+    <div class="filter_block d-none d-xl-flex" id="filter_block" >
         <p class="font-weight_medium">Категория</p>
         <form action="">
-            <div>
-                <label for="">Лампочка</label>
-                <input type="checkbox" value="Лампочки">
-            </div>
-            <div>
-                <label for="">Плафоны</label>
-                <input type="checkbox" value="Плафоны">
-            </div>
-            <div>
-                <label for="">Светильники</label>
-                <input type="checkbox" value="Светильники">
-            </div>
+            <div><label for="">Лампочка</label><input type="checkbox" value="Лампочки"></div>
+            <div><label for="">Плафоны</label><input type="checkbox" value="Плафоны"></div>
+            <div><label for="">Светильники</label><input type="checkbox" value="Светильники"></div>
             <input type="submit" value="Применить">
         </form>
     </div>
-{% endblock %}
-{% block body %}
+
+<!--------------------->
+
+
+ <div class="container-fluid main_screen">
+            <div data-aos="fade-down" class="row header pdng-width">
+                <div class="col-xl-4 d-none d-xl-flex logo_block">
+                    <a href="{% url 'main_url' %}">
+                        <img src="{% static 'img/icon/logo.svg' %}" alt="">
+                    </a>
+                </div>
+                <div class="col-12 d-flex d-xl-none burger_block">
+                    <div class="burger_block__inner" id="burger_block">
+                        <input class="checkbox" type="checkbox" name="" id=""/>
+                        <div class="hamburger-lines">
+                            <span class="line line1"></span>
+                            <span class="line line2"></span>
+                            <span class="line line3"></span>
+                        </div>
+                        <div class="menu-items">
+                            <li>
+                                <a class="font-weight_semibold mobile_font-size_huge"
+                                   href="{% url 'main_url' %}">Главная</a>
+                            </li>
+                            <li>
+                                <a class="font-weight_semibold mobile_font-size_huge"
+                                   href="{% url 'catalog_url' %}">Каталог</a>
+                            </li>
+                            <li>
+                                <a class="font-weight_semibold mobile_font-size_huge"
+                                   href="{% url 'about_us_url' %}">О нас</a>
+                            </li>
+                            <li>
+                                <a class="font-weight_semibold mobile_font-size_huge"
+                                   href="{% url 'contacts_url' %}">Контакты</a>
+                            </li>
+                            <button onclick="modal_open()" class="mobile_font-size_huge font-weight_bold">Заказать</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 d-none d-xl-flex menu">
+                    <li>
+                        <a class="font-size_small font-weight_regular"
+                           href="{% url 'catalog_url' %} ">Каталог</a>
+                        <a class="font-size_small font-weight_regular margin-side"
+                           href="{% url 'about_us_url' %}">О нас</a>
+                        <a class="font-size_small font-weight_regular"
+                           href="{% url 'contacts_url' %}">Контакты</a>
+                    </li>
+                </div>
+                <div class="col-xl-4 d-none d-xl-flex order_block">
+                    <button onclick="modal_open()" class="font-size_small font-weight_bold">Заказать</button>
+                </div>
+            </div>
+
+
     <div data-aos="fade-up" class="row catalog_block pdng-width">
         <div class="col-12 col-xl-6 pdng-width catalog_block__h3">
             <h3 class="font-weight_medium">Католог</h3>
@@ -94,4 +177,69 @@
             <img src="{% static 'img/lamp_bronze.png' %}" alt="">
         </div>
     </div>
-{% endblock %}
+ <div data-aos="fade-up" class="row footer">
+                <div class="col-6 col-xl-5 footer_logo">
+                    <img src="{% static 'img/icon/logo_full_orng.svg' %}" alt="">
+                    <div class="footer__policy">
+                        <p class="font-size_tiny font-weight_light mobile_font-size_light">Все права защищены</p>
+                        <a class="font-size_tiny font-weight_light mobile_font-size_light"
+                           href="{% url 'policy_url' %}">Политика конфиденциальности</a>
+                        <a class="font-size_tiny font-weight_light wave_up mobile_font-size_light"
+                           href="">Сделано студией WAVEUP</a>
+                    </div>
+                    <div class="footer_menu__inner d-flex d-xl-none">
+                        <h4 class="font-weight_bold mobile_font-size_light margin-bottom">О нас</h4>
+                        <a class="font-weight_light mobile_font-size_light"
+                           href="{% url 'contacts_url' %}">Контакты</a>
+                    </div>
+                </div>
+                <div class="col-6 col-xl-7 footer_menu">
+                    <div class="footer_menu__inner">
+                        <h4 class="font-weight_bold margin-bottom mobile_font-size_light">Наши магазины</h4>
+                        <li>
+                            <a class="font-weight_light mobile_font-size_light"
+                               href="https://goo.gl/maps/phCLkgbMNvENTPTn9">г. Алматы,
+                                <br class="d-none d-xl-flex">
+                            ТД Бакорда Строй Сити</a>
+                        </li>
+                    </div>
+                    <div class="footer_menu__inner margin-side">
+                        <h4 class="font-weight_bold mobile_font-size_light margin-bottom">Каталог</h4>
+                        <a class="font-weight_light mobile_font-size_light"
+                           href="{% url 'catalog_url' %}">Весь каталог</a>
+                    </div>
+                    <div class="footer_menu__inner d-none d-xl-flex">
+                        <h4 class="font-weight_bold margin-bottom">
+                            О нас
+                        </h4>
+                        <a class="font-weight_light" href="{% url 'contacts_url' %}">Контакты</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+        var pages_number = 3;
+        if (window.screen.width <= 1023){
+            pages_number = 2;
+        }
+        var splide = new Splide( '.splide', {
+          perPage: pages_number,
+          rewind : true,
+        } );
+
+        splide.mount();
+
+        </script>
+        <!--Animation Scroll-->
+        <script>
+    AOS.init({
+        disable: function() {
+    var maxWidth = 800;
+    return window.innerWidth < maxWidth;
+  }
+    });
+
+        </script>
+        <!-------------------->
+    </body>
+</html>

@@ -1,7 +1,6 @@
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
-import datetime
 from django.utils import timezone
 # Email parameters
 to_addr = 'root@localhost'
