@@ -15,10 +15,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 def show_main(request):
     products = Product.objects.all().order_by("price")[0:5]
-    print(request.method)
+   # print(request.method)
     if request.method == 'POST':
         data = request.POST
-        print(data)
+       # print(data)
         time = datetime.datetime.now().strftime("%m/%d/%Y %H:%M")
         write_table([[data['name']], [data['phone']], [data['email']],
                      [data["vendor_code"]], [data["code"]], [data["product_name"]], [time]])
@@ -30,17 +30,31 @@ def show_main(request):
 def show_products(request):
     products = Product.objects.all().order_by("date")
     rows = read_from_csv() if os.path.exists(BASE_DIR/"files/file.csv") else None
-    dict_to_db(rows)
+    dict_to_db(rows) if rows else None
 
-    print(request.method)
     if request.method == 'POST':
         data = request.POST
-        print(data)
-        time = datetime.datetime.now().strftime("%m/%d/%Y %H:%M")
-        write_table([[data['name']], [data['phone']], [data['email']],
-                     [data["vendor_code"]], [data["code"]], [data["product_name"]], [time]])
-        send_mail(data)
-        return redirect('main_url')
+        filtered = Product.objects.all()
+        categories = []
+        if data.get("Светильники"):
+            categories.append("Светильник")
+        if data.get("Плафоны"):
+            categories.append("Плафон")
+        if data.get("Лампы"):
+            categories.append("Лампа")
+        if categories:
+            filtered = filtered.filter(category__name__in=categories)
+            print(filtered)
+            return render(request, "pages/catalog.html", context={"products": filtered})
+
+
+
+        if data.get('name'):
+            time = datetime.datetime.now().strftime("%m/%d/%Y %H:%M")
+            write_table([[data['name']], [data['phone']], [data['email']],
+                         [data["vendor_code"]], [data["code"]], [data["product_name"]], [time]])
+            send_mail(data)
+            return redirect('main_url')
 
     return render(request, "pages/catalog.html", context={"products": products})
 
@@ -49,7 +63,6 @@ def show_contacts(request):
 
     if request.method == 'POST':
         data = request.POST
-        print(data)
         time = datetime.datetime.now().strftime("%m/%d/%Y %H:%M")
         write_table([[data['name']], [data['phone']], [data['email']],
                      [data["vendor_code"]], [data["code"]], [data["product_name"]], [time]])

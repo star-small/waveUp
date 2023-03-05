@@ -55,10 +55,11 @@
 
     <div class="filter_block d-none d-xl-flex" id="filter_block" style="z-index:2;">
         <p class="font-weight_medium">Категория</p>
-        <form action="">
-            <div><label for="">Лампочка</label><input type="checkbox" value="Лампочки"></div>
-            <div><label for="">Плафоны</label><input type="checkbox" value="Плафоны"></div>
-            <div><label for="">Светильники</label><input type="checkbox" value="Светильники"></div>
+        <form action="" method="POST">
+            {% csrf_token %}
+            <div><label for="">Лампочка</label><input name="Лампы" type="checkbox" value="Лампочки"></div>
+            <div><label for="">Плафоны</label><input name="Плафоны" type="checkbox" value="Плафоны"></div>
+            <div><label for="">Светильники</label><input name="Светильники" type="checkbox" value="Светильники"></div>
             <input type="submit" value="Применить">
         </form>
     </div>

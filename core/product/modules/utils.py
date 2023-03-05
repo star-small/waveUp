@@ -20,7 +20,6 @@ def dict_to_db(values_dict):
         select = dict(select[:5] + select[6:])
         existing_product = Product.objects.filter(
             from_csv=True, **select).first()
-        print(existing_product)
         if not existing_product:
             Product.objects.create(**values, from_csv=True)
 
