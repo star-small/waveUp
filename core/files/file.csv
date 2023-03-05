@@ -24,9 +24,9 @@
 Спот;321;PL02;Спот LED 3D 18W 6500K RD-PL02;750;23 01 2000 13:15;550;product_image/image-1-21.png
 Спот;323;PL03;Спот LED 3D 24W 6500K RD-PL03;1125;24 01 2000 13:15;;product_image/image-1-21.png
 Спот;325;PL04;Спот LED 3D 36W 6500K RD-PL04;1563;25 01 2000 13:15;;product_image/image-1-21.png
-Спот;320;PL05;Спот LED 3D 10W 6500K SQ-PL05;625;26 01 2000 13:15;450;product_image/image-1-28.png
-Спот;322;PL06;Спот LED 3D 18W 6500K SQ-PL06;813;27 01 2000 13:15;600;product_image/image-1-28.png
-Спот;324;PL07;Спот LED 3D 24W 6500K SQ-PL07;1188;28 01 2000 13:15;900;product_image/image-1-28.png
+Спот;320;PL05;Спот LED 3D 10W 6500K SQ-PL05;450;26 01 2000 13:15;625;product_image/image-1-28.png
+Спот;322;PL06;Спот LED 3D 18W 6500K SQ-PL06;600;27 01 2000 13:15;813;product_image/image-1-28.png
+Спот;324;PL07;Спот LED 3D 24W 6500K SQ-PL07;900;28 01 2000 13:15;1188;product_image/image-1-28.png
 Спот;326;PL08;Спот LED 3D 36W 6500K SQ-PL08;1688;29 01 2000 13:15;;product_image/image-1-28.png
 Спот;338;PL14;Спот LED SF 12W 6500K RD-PL14;875;30 01 2000 13:15;;product_image/image-1-13.png
 Спот;340;PL15;Спот LED SF 18W 6500K RD-PL15;1250;01 02 2000 13:15;;product_image/image-1-13.png
@@ -49,23 +49,23 @@
 Лента;407;PN01;Лента LED 220V-120D-0.2W 4000K 10MM*5M-PN01;2125;18 02 2000 13:15;;product_image/image-1-19.png
 Лента;408;PN02;Лента LED 220V-120D-0.2W 6500K 10MM*5M-PN02;2125;19 02 2000 13:15;;product_image/image-1-19.png
 Адаптер;1;GI50503;Адаптер PULT RGB 100M-GI50503;1250;20 02 2000 13:15;;product_image/image-1-14.png
-Лампа;79;XP44;Лампа Настенная İP66 GRAY 4000K 12W+12W 220V 300*110MM-XP44;7500;21 02 2000 13:15;5000;product_image/image-1-8.png
-Лампа;81;XP45;Лампа Настенная İP66 GRAY 6000K 12W+12W 220V 300*110MM-XP45;7500;22 02 2000 13:15;5000;product_image/image-1-8.png
-Лампа;75;XP46;Лампа Настенная İP66 BLACK 4000K 12W+12W 220V 300*110MM-XP46;7500;23 02 2000 13:15;5000;product_image/image-1-8.png
-Лампа;77;XP47;Лампа Настенная İP66 BLACK 6000K 12W+12W 220V 300*110MM-XP47;7500;24 02 2000 13:15;5000;product_image/image-1-8.png
-Лампа;80;XP48;Лампа Настенная İP66 GRAY 4000K 8W+8W 220V 260*90MM-XP48;5625;25 02 2000 13:15;4000;product_image/image-1-23.png
-Лампа;82;XP49;Лампа Настенная İP66 GRAY 6000K 8W+8W 220V 260*90MM-XP49;5625;26 02 2000 13:15;4000;product_image/image-1-23.png
-Лампа;76;XP50;Лампа Настенная İP66 BLACK 4000K 8W+8W 220V 260*90MM-XP50;5625;27 02 2000 13:15;4000;product_image/image-1-23.png
-Лампа;78;XP51;Лампа Настенная İP66 BLACK 6000K 8W+8W 220V 260*90MM-XP51;5625;28 02 2000 13:15;4000;product_image/image-1-23.png
-Мачтовый;165;PR27;Мачтовый  фонарь KOBRA головка  100W 6500K 720*280MM-PR27;10625;01 03 2000 13:15;7900;product_image/image-1-20.png
-Мачтовый;166;PR28;Мачтовый  фонарь KOBRA головка 150W 6500K 850*320MM-PR28;13750;02 03 2000 13:15;10000;product_image/image-1-20.png
-Прожектор;233;PR06;Прожектор IP66 50W 6500K COB 185*135MM-PR06;1500;03 03 2000 13:15;1100;product_image/image-1-25.png
-Прожектор;220;PR07;Прожектор IP66 100W 6500K COB 230*160MM-PR07;2500;04 03 2000 13:15;1800;product_image/image-1-25.png
-Прожектор;222;PR08;Прожектор IP66 200W 6500K COB 280*195MM-PR08;3750;05 03 2000 13:15;2800;product_image/image-1-25.png
-Прожектор;225;PR09;Прожектор IP66 300W 6500K COB 320*220MM-PR09;5250;06 03 2000 13:15;4000;product_image/image-1-25.png
+Лампа;79;XP44;Лампа Настенная İP66 GRAY 4000K 12W+12W 220V 300*110MM-XP44;5000;21 02 2000 13:15;7500;product_image/image-1-8.png
+Лампа;81;XP45;Лампа Настенная İP66 GRAY 6000K 12W+12W 220V 300*110MM-XP45;5000;22 02 2000 13:15;7500;product_image/image-1-8.png
+Лампа;75;XP46;Лампа Настенная İP66 BLACK 4000K 12W+12W 220V 300*110MM-XP46;5000;23 02 2000 13:15;7500;product_image/image-1-8.png
+Лампа;77;XP47;Лампа Настенная İP66 BLACK 6000K 12W+12W 220V 300*110MM-XP47;5000;24 02 2000 13:15;7500;product_image/image-1-8.png
+Лампа;80;XP48;Лампа Настенная İP66 GRAY 4000K 8W+8W 220V 260*90MM-XP48;4000;25 02 2000 13:15;5625;product_image/image-1-23.png
+Лампа;82;XP49;Лампа Настенная İP66 GRAY 6000K 8W+8W 220V 260*90MM-XP49;4000;26 02 2000 13:15;5625;product_image/image-1-23.png
+Лампа;76;XP50;Лампа Настенная İP66 BLACK 4000K 8W+8W 220V 260*90MM-XP50;4000;27 02 2000 13:15;5625;product_image/image-1-23.png
+Лампа;78;XP51;Лампа Настенная İP66 BLACK 6000K 8W+8W 220V 260*90MM-XP51;4000;28 02 2000 13:15;5625;product_image/image-1-23.png
+Мачтовый;165;PR27;Мачтовый  фонарь KOBRA головка  100W 6500K 720*280MM-PR27;7900;01 03 2000 13:15;10625;product_image/image-1-20.png
+Мачтовый;166;PR28;Мачтовый  фонарь KOBRA головка 150W 6500K 850*320MM-PR28;10000;02 03 2000 13:15;13750;product_image/image-1-20.png
+Прожектор;233;PR06;Прожектор IP66 50W 6500K COB 185*135MM-PR06;1100;03 03 2000 13:15;1500;product_image/image-1-25.png
+Прожектор;220;PR07;Прожектор IP66 100W 6500K COB 230*160MM-PR07;1800;04 03 2000 13:15;2500;product_image/image-1-25.png
+Прожектор;222;PR08;Прожектор IP66 200W 6500K COB 280*195MM-PR08;2800;05 03 2000 13:15;3750;product_image/image-1-25.png
+Прожектор;225;PR09;Прожектор IP66 300W 6500K COB 320*220MM-PR09;4000;06 03 2000 13:15;5250;product_image/image-1-25.png
 Прожектор;228;PR10;Прожектор IP66 400W 6500K COB 380*230MM-PR10;6875;07 03 2000 13:15;;product_image/image-1-25.png
-Датчик;5;SR03;Датчик движение S18-SR03;1875;08 03 2000 13:15;1400;product_image/image-1-15.png
-Датчик;3;SR04;Датчик движение S02-SR04;2000;09 03 2000 13:15;1400;product_image/image-1-5.png
+Датчик;5;SR03;Датчик движение S18-SR03;1400;08 03 2000 13:15;1875;product_image/image-1-15.png
+Датчик;3;SR04;Датчик движение S02-SR04;1400;09 03 2000 13:15;2000;product_image/image-1-5.png
 Патрон;180;DL37;Патрон Подвесной DEKOR 1M E27 BRIGHT GREY-DL37;1000;10 03 2000 13:15;;product_image/image-1-24.png
 Патрон;182;DL38;Патрон Подвесной DEKOR 1M E27 RED COPPER-DL38;1000;11 03 2000 13:15;;product_image/image-1-24.png
 Патрон;181;DL39;Патрон Подвесной DEKOR 1M E27 GOLD-DL39;1000;12 03 2000 13:15;;product_image/image-1-24.png
@@ -80,10 +80,10 @@
 Спот;358;RS33;Спот RAY COB 30W 4000K WHITE 77*160MM-RS33;2250;21 03 2000 13:15;;product_image/image-1-7.png
 Спот;359;RS34;Спот RAY COB 30W 6500K BLACK 77*160MM-RS34;2250;22 03 2000 13:15;;product_image/image-1-7.png
 Спот;356;RS35;Спот RAY COB 30W 4000K BLACK 77*160MM-RS35;2250;23 03 2000 13:15;;product_image/image-1-7.png
-Спот;365;RS48;Спот RAY COB LENZ BLACK 30W 6500K 73*168MM-RS48;2000;24 03 2000 13:15;1500;product_image/image-1-7.png
-Спот;364;RS49;Спот RAY COB LENZ BLACK 30W 4000K 73*168MM-RS49;2000;25 03 2000 13:15;1500;product_image/image-1-7.png
-Спот;369;RS50;Спот RAY COB LENZ WHITE 30W 6500K 73*168MM-RS50;2000;26 03 2000 13:15;1500;product_image/image-1-7.png
-Спот;368;RS51;Спот RAY COB LENZ WHITE 30W 4000K 73*168MM-RS51;2000;27 03 2000 13:15;1500;product_image/image-1-7.png
+Спот;365;RS48;Спот RAY COB LENZ BLACK 30W 6500K 73*168MM-RS48;1500;24 03 2000 13:15;2000;product_image/image-1-7.png
+Спот;364;RS49;Спот RAY COB LENZ BLACK 30W 4000K 73*168MM-RS49;1500;25 03 2000 13:15;2000;product_image/image-1-7.png
+Спот;369;RS50;Спот RAY COB LENZ WHITE 30W 6500K 73*168MM-RS50;1500;26 03 2000 13:15;2000;product_image/image-1-7.png
+Спот;368;RS51;Спот RAY COB LENZ WHITE 30W 4000K 73*168MM-RS51;1500;27 03 2000 13:15;2000;product_image/image-1-7.png
 Спот;363;RS52;Спот RAY COB LENZ BLACK 20W 6500K 62*145MM-RS52;1625;28 03 2000 13:15;;product_image/image-1-7.png
 Спот;362;RS53;Спот RAY COB LENZ BLACK 20W 4000K 62*145MM-RS53;1625;29 03 2000 13:15;;product_image/image-1-7.png
 Спот;367;RS54;Спот RAY COB LENZ WHITE 20W 6500K 62*145MM-RS54;1625;30 03 2000 13:15;;product_image/image-1-7.png
