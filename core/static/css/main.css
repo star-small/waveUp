@@ -608,12 +608,12 @@ h4{
 }
 
 .map_block__adress_list{
-    width: 33%;
+width: 33%;
     display: flex;
-    align-items: center;
+    /* align-items: center; */
     flex-direction: column;
     margin-left: auto;
-    padding: 2.96vw 0 2.96vw 0;
+    padding: 2.96vw 2.96vw 2.96vw 2.96vw;
 }
 
 .map_block__adress_list li{
@@ -625,12 +625,13 @@ h4{
     list-style: disc!important;
 }
 
-.map_block__adress_list a.open_map{
+.map_block__adress_list a.open_map {
     margin-top: auto;
     color: var(--black-color);
     background-color: var(--main-color);
     padding: 1vw 3vw;
     border-radius: 2vw;
+    text-align: center;
 }
 
 .footer{
