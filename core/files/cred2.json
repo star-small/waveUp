@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "djangosheets-381511",
+  "private_key_id": "3824391902bd6c61a9eb141b23d8aa2cee4c26ce",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCX/+br04d23QcU\nuXIzII9DFsmmuZl1fECyWIWkbzTjZjJ62rdxWwfYDJgxHBOKB/CbaVo5Chw2rrmk\nb29mZc0PltUadK9oGuNc9EmdH42ZYjcSVfcEV/RzQLxXkDyigUtEpOFG5zlRsxPe\nVvs4aJEgjbAIBo4fhyiHB3LEP3JrN9/vggZNHsDFFpvdk6P8+IN6koEvxePQcRXc\n9Oqh+U5rCuqhTBYQbBE6Lc6eQSxy0DrfPo0v3kD82z6e6TmpzPEhGnZlwMdeiv7q\nUkAPI7ae/zsqYBdOvrU4i1LrEuzYtpBDldSn/x0TwIWMmB7JMy0GiuDo5GEVH12p\n2uKPJA8rAgMBAAECggEADfcaZbBu/HdyScUqvj0k7H+7fJtbg3UsZzZwO5tmuz3j\nMBvISZyY1pDRqtwZhM/Am4bNHfsqfHEGksUU8c4zTlYICQDk3NEbnVQUhLXRcguZ\nY7s3kX6YnGjmOmVWLNgUQkpOfbqLhFDKZ93grF4ZzL6NMy+RqfPmaqw/Lyi6f9SO\nBxxQwiSdECbgRgG8WsKcbHZCupLhBhK/C+t+OpdvId8d6Qr5AT/J8bLr7w1ASE+c\np7L9ikqkNhBaTlONGghh9XjKh1IoQ/t2Nav4FDa58Joh65dpur3qUjvb/jhHm+iH\nWbRZ/z72LYA8RWfk8u19ibknxeP/FG9LsU5FdTRTgQKBgQDVlOBWH6o7Fyvamwuv\nL7HccK77ot8jmYsn+VxCORWiDgKdW/LknEFLzTQDtkDbhYVw9jG2+wpziYU4Gez0\nVupgxou5RUyhnoSAVz5uDDF6v5V3JA/b5WyX+BJADjiXPNIZ3mZh6TJtzcS5zRB2\nPiPbtnIoljUh3g7k9pRJTOEVPQKBgQC2MAQ3Yr1XrGOYH8DFG1JdYm8BxgfRERj0\n+ZiuC+h5oSG1AH4Q9macUiA2wUpDxAc7p4jfZFLYiADAgpURRi496H/F9xl3Hmvf\nHx2qjKJFFajr6nrcid/YFkL0uuKz/EFKiaXheQiK6sjQuTsHxXUbuFfrYdRzAk0C\nFbcBam8MhwKBgH0F3+gqMwDSCIa3ubg76BaNE7ETXyE8sRueOWY+ei5Zmyg3+c/e\ns85GeYsutXqLB1jflKxy+WQ2fPghHPbOpfYuYv351ejJnPBvoYjTtGcRHNIYFvx2\nqQGwYiaC7JeDL82axT3NPwrNp7nHkzpUF7N2cg7WFpYToY5f1N+vlBZVAoGANDzK\nSLMoBQZpvAmGtT1jPWFm4MROI3Taigsy6tyBOLapuoM8olJ0E2g80lZTm+CODl24\nEg1q76j3Rjtq0Hwl8BxE3pc+FviDB4OddvRB5rsSJyqhNbDWnNetNQyMyfyPH/cd\nt+uDNomhMK+brFvCe0M8+kGfr6Y+PFXLlj1VP+sCgYEApYLTBjsODmPwq2dqJfMU\nl+DAxOplXwjg24RANDGk8wLgWY4Icgnop/NGOVZOfPcr8AewEp81pJDvpRqaYhmS\nEwLmHHnfRWhD86415Eqo8xILH1Pl8dZEuGEFFsPwKkD50cjGveFgy4tgx7t++UrI\nbaLEnuVoVPhyXvaQKiOh5YY=\n-----END PRIVATE KEY-----\n",
+  "client_email": "novella@djangosheets-381511.iam.gserviceaccount.com",
+  "client_id": "111860321875071435842",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/novella%40djangosheets-381511.iam.gserviceaccount.com"
+}

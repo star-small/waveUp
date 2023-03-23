@@ -9,9 +9,9 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 # Файл, полученный в Google Developer Console
-CREDENTIALS_FILE = BASE_DIR/'files/cred.json'
+CREDENTIALS_FILE = BASE_DIR/'files/cred2.json'
 # ID Google Sheets документа (можно взять из его URL)
-spreadsheet_id = '1sPAtPQT0UOBm5wgCENXlaXpFlBibdYvOP6CwbnnEseg'
+spreadsheet_id = '1SoXLSwe2RKi6h561y2GZEUTPW3GECgs7J00ywTxjDgs'
 
 # Авторизуемся и получаем service — экземпляр доступа к API
 credentials = ServiceAccountCredentials.from_json_keyfile_name(
