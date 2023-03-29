@@ -11,3 +11,4 @@ core/product/migrations/
 *.pyc
 core/core/settings.py
 core/product/migrations/
+core/media/product_image/
