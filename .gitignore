@@ -7,5 +7,6 @@ core/core/settings.py
 core/db.sqlite3
 core/files/file.csv
 core/product/__pycache__/
+core/product/migrations/
 *.pyc
 core/core/settings.py

@@ -31,6 +31,8 @@ def read_from_csv():
         model_fields = Product._meta.get_fields()[1:-2]
         field_values = []
         for row in rows[1:]:
+
             field_values.append(
                 dict([(model_fields[i].name, row[i]) for i in range(len(row))]))
+
     return field_values
