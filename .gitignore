@@ -1,0 +1,14 @@
+venv/
+.idea/
+core/core/__pycache__/*
+core/product/__pycache__/*
+core/core/__pycache__/
+core/core/settings.py
+core/db.sqlite3
+core/files/file.csv
+core/product/__pycache__/
+core/product/migrations/
+*.pyc
+core/core/settings.py
+core/product/migrations/
+core/media/product_image/
