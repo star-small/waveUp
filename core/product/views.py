@@ -1,38 +1,36 @@
 import os
 
 from django.shortcuts import render, redirect
-
+from .modules.sheets import Table
 from .modules.mail import send_mail
 # from django.contrib.auth.models import User
 # from .forms import UserForm
-from .modules.sheets import write_table
 from .modules.utils import *
 
 BASE_DIR = Path(__file__).resolve().parent.parent
-
-
+tb = Table()  # google sheets
 
 
 def show_main(request):
     products = Product.objects.all().order_by("price")[0:5]
-   # print(request.method)
-    if request.method == 'POST':
+    # print(request.method)
+    if request.method == "POST":
         data = request.POST
-       # print(data)
+        # print(data)
         time = datetime.datetime.now().strftime("%m/%d/%Y %H:%M")
-        write_table([[data['name']], [data['phone']], [data['email']],
-                     [data["vendor_code"]], [data["code"]], [data["product_name"]], [time]])
+        print(data["name"])
+        tb.load_data(data)
         send_mail(data)
-        return redirect('main_url')
+        return redirect("main_url")
     return render(request, "index.html", context={"products": products})
 
 
 def show_products(request):
     products = Product.objects.all().order_by("date")
-    rows = read_from_csv() if os.path.exists(BASE_DIR/"files/file.csv") else None
+    rows = read_from_csv() if os.path.exists(BASE_DIR / "files/file.csv") else None
     dict_to_db(rows) if rows else None
 
-    if request.method == 'POST':
+    if request.method == "POST":
         data = request.POST
         filtered = Product.objects.all()
         categories = []
@@ -47,27 +45,20 @@ def show_products(request):
             print(filtered)
             return render(request, "pages/catalog.html", context={"products": filtered})
 
-
-
-        if data.get('name'):
-            time = datetime.datetime.now().strftime("%m/%d/%Y %H:%M")
-            write_table([[data['name']], [data['phone']], [data['email']],
-                         [data["vendor_code"]], [data["code"]], [data["product_name"]], [time]])
+        if data.get("name"):
+            tb.load_data(data)
             send_mail(data)
-            return redirect('main_url')
+            return redirect("main_url")
 
     return render(request, "pages/catalog.html", context={"products": products})
 
 
 def show_contacts(request):
-
-    if request.method == 'POST':
+    if request.method == "POST":
         data = request.POST
         time = datetime.datetime.now().strftime("%m/%d/%Y %H:%M")
-        write_table([[data['name']], [data['phone']], [data['email']],
-                     [data["vendor_code"]], [data["code"]], [data["product_name"]], [time]])
         send_mail(data)
-        return redirect('main_url')
+        return redirect("main_url")
     return render(request, "pages/contacts.html")
 
 
