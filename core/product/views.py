@@ -13,11 +13,8 @@ tb = Table()  # google sheets
 
 def show_main(request):
     products = Product.objects.all().order_by("price")[0:5]
-    # print(request.method)
     if request.method == "POST":
         data = request.POST
-        # print(data)
-        time = datetime.datetime.now().strftime("%m/%d/%Y %H:%M")
         print(data["name"])
         tb.load_data(data)
         send_mail(data)
@@ -29,28 +26,23 @@ def show_products(request):
     products = Product.objects.all().order_by("date")
     rows = read_from_csv() if os.path.exists(BASE_DIR / "files/file.csv") else None
     dict_to_db(rows) if rows else None
-
+    categories = Category.objects.all()
     if request.method == "POST":
         data = request.POST
-        filtered = Product.objects.all()
-        categories = []
-        if data.get("Светильники"):
-            categories.append("Светильник")
-        if data.get("Плафоны"):
-            categories.append("Плафон")
-        if data.get("Лампы"):
-            categories.append("Лампа")
-        if categories:
-            filtered = filtered.filter(category__name__in=categories)
-            print(filtered)
-            return render(request, "pages/catalog.html", context={"products": filtered})
-
-        if data.get("name"):
-            tb.load_data(data)
-            send_mail(data)
-            return redirect("main_url")
-
-    return render(request, "pages/catalog.html", context={"products": products})
+        if data.get("filter"):
+            print(data)
+            category_list = data.getlist("filter")
+            filtered = products.filter(category__name__in=category_list)
+            return render(
+                request,
+                "pages/catalog.html",
+                context={"products": filtered, "categories": categories},
+            )
+    return render(
+        request,
+        "pages/catalog.html",
+        context={"products": products, "categories": categories},
+    )
 
 
 def show_contacts(request):

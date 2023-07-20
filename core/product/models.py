@@ -12,15 +12,16 @@ class Category(models.Model):
 
     class Meta:
         verbose_name = "Категория"
-        verbose_name_plural = 'Категории'
-#wefwef
+        verbose_name_plural = "Категории"
+
+
+# wefwef
+
 
 class Product(models.Model):
-    category = models.ForeignKey(
-        Category, on_delete=models.CASCADE, null=True)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, null=True)
     code = models.CharField(max_length=30, unique=True, null=False)
-    vendor_code = models.CharField(
-        max_length=30, unique=True, null=False)
+    vendor_code = models.CharField(max_length=30, unique=True, null=False)
     name = models.CharField(max_length=100)
     price = models.DecimalField(max_digits=16, decimal_places=3)
     date = models.DateTimeField(default=now())
@@ -34,7 +35,7 @@ class Product(models.Model):
 
     def save(self, *args, **kwargs):
         self.slug = f"{self.code}_on_{now().strftime('%Y-%m-%d')}"
-        self.date = now() if self.date == '' else self.date
+        self.date = now() if self.date == "" else self.date
 
         if self.category is None:
             self.category = Category.objects.get(name="undefined")
@@ -44,4 +45,4 @@ class Product(models.Model):
 
     class Meta:
         verbose_name = "Товар"
-        verbose_name_plural = 'Товары'
+        verbose_name_plural = "Товары"

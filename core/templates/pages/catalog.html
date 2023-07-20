@@ -57,9 +57,9 @@
         <p class="font-weight_medium">Категория</p>
         <form action="" method="POST">
             {% csrf_token %}
-            <div><label for="">Лампочка</label><input name="Лампы" type="checkbox" value="Лампочки"></div>
-            <div><label for="">Плафоны</label><input name="Плафоны" type="checkbox" value="Плафоны"></div>
-            <div><label for="">Светильники</label><input name="Светильники" type="checkbox" value="Светильники"></div>
+            {% for category in categories %}
+            <div><label for="">{{category.name}}</label><input name="filter" type="checkbox" value="{{category.name}}"></div>
+            {% endfor %}
             <input type="submit" value="Применить">
         </form>
     </div>
