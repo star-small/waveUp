@@ -134,19 +134,12 @@
         </div>
         <div class="col-12 d-flex d-xl-none mobile_filter" id="filter_block">
             <p class="font-weight_medium mobile_font-size_big">Фильтр</p>
-            <form action="">
-                <div>
-                    <label for="">Лампочка</label>
-                    <input type="checkbox" value="Лампочки">
-                </div>
-                <div>
-                    <label for="">Плафоны</label>
-                    <input type="checkbox" value="Плафоны">
-                </div>
-                <div>
-                    <label for="">Светильники</label>
-                    <input type="checkbox" value="Светильники">
-                </div>
+            <form action="" method="POST">
+                {% csrf_token %}
+                {% for category in categories %}
+                
+            <div><label for="">{{category.name}}</label><input name="filter" type="checkbox" value="{{category.name}}"></div>
+                {% endfor %}
                 <input type="submit" value="Применить">
             </form>
         </div>
