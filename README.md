@@ -1,14 +1,6 @@
 # Сайт novella-electric, написанный на Django.
 
-### Примечание 
-settings.py для этого проекта отсутсвует. Скопируйте пример settings_example.py и внесите в него изменения, необходимые для развертывания в вашей системе:
-```bash
-cp core/core/settings_example.py core/core/settings.py
-rm core/core/settings_example.py
-```
 ### Минимальный запуск приложения 
-
-После написания модуля settings.py, вам нужно будет создать новое виртуальное окружение и установить необходимые модули:
 
 - Представленные комманды только для линукс, узнайте методы для создания виртульного окружения и установки пакетов для собственной системы.
 
@@ -20,6 +12,14 @@ cd waveUp
 pip install -r requirements.txt
 ```
 
+### Примечание 
+settings.py для этого проекта отсутсвует. Скопируйте пример settings_example.py и внесите в него изменения, необходимые для развертывания в вашей системе:
+
+```bash
+cp core/core/settings_example.py core/core/settings.py
+rm core/core/settings_example.py
+```
+
 Затем запустите приложение:
     
 ```bash
@@ -28,6 +28,7 @@ python3 manage.py makemigrations
 python3 manage.py migrate --run-syncdb
 python3 manage.py runserver
 ```
+
 - Данная комманда запустит веб-приложение на 8000-м порту на локальном хосте. Просто перейдите по ссылке localhost:8000, чтобы увидеть приложение.
 
 Создание суперпользователя:
@@ -35,7 +36,7 @@ python3 manage.py runserver
 ```bash
 python3 manage.py createsuperuser
 ```
-    
+
 - После создания суперпользователя, вы можете администрировать базу данных, перейдя по адресу localhost:8000/admin
 
 ### Загрузка CSV.
