@@ -36,7 +36,7 @@ python3 manage.py runserver
 python3 manage.py createsuperuser
 ```
     
-- После создания суперпользователя, вы можете администрировать базу данных, перейдя по адресу localhost:8000/admins
+- После создания суперпользователя, вы можете администрировать базу данных, перейдя по адресу localhost:8000/admin
 
 ### Загрузка CSV.
 
@@ -49,3 +49,7 @@ mkdir media/product_image/
 # местоположение каталога может разниться в зависимости от настройки setting.py
 ```
 - Загрузите фотографии товаров в каталог ``` media/product_image/ ```, названия файлов в этой директории и в файле сsv должны быть одинаковы.
+
+### Развёртывание
+
+https://www.digitalocean.com/community/tutorials/how-to-set-up-django-with-postgres-nginx-and-gunicorn-on-ubuntu-18-04#step-10-configure-nginx-to-proxy-pass-to-gunicorn
