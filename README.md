@@ -25,7 +25,7 @@ pip install -r requirements.txt
 ```bash
 cd core/
 python3 manage.py makemigrations
-python3 manage.py migrate
+python3 manage.py migrate --run-syncdb
 python3 manage.py runserver
 ```
 - Данная комманда запустит веб-приложение на 8000-м порту на локальном хосте. Просто перейдите по ссылке localhost:8000, чтобы увидеть приложение.
