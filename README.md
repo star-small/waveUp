@@ -60,6 +60,6 @@ mkdir media/product_image/
 ```
 Загрузите фотографии товаров в каталог media/product_image/, названия файлов в этой директории и в файле CSV должны быть одинаковы.
 
-## Развёртывание
+## Развёртывание 🚀
 
 [Руководство по развёртыванию Django с использованием Postgres, Nginx и Gunicorn на Ubuntu 18.04](https://www.digitalocean.com/community/tutorials/how-to-set-up-django-with-postgres-nginx-and-gunicorn-on-ubuntu-18-04#step-10-configure-nginx-to-proxy-pass-to-gunicorn)
