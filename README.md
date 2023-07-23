@@ -1,6 +1,8 @@
 # Сайт novella-electric, написанный на Django.
 
-### Минимальный запуск приложения 
+## Минимальный запуск приложения 
+
+### Настройка окружения
 
 - Представленные комманды только для линукс, узнайте методы для создания виртульного окружения и установки пакетов для собственной системы.
 
@@ -20,7 +22,7 @@ cp core/core/settings_example.py core/core/settings.py
 rm core/core/settings_example.py
 ```
 
-Затем запустите приложение:
+### Запуск
     
 ```bash
 cd core/
@@ -43,7 +45,8 @@ python3 manage.py createsuperuser
 
 Чтобы загрузить товары из csv файла переместите ваш файл в директорию ```waveUp/core/files/``` под именем ``` file.csv ```.
 
-### после загрузки файла, вам может потребоваться загрузить фотографии. Для этого создайте папку:
+- после загрузки файла, вам может потребоваться загрузить фотографии. Для этого создайте папку:
+
 ```bash
 # В папке waveUp/core, рядом с файлом manage.py
 mkdir media/product_image/
@@ -51,6 +54,6 @@ mkdir media/product_image/
 ```
 - Загрузите фотографии товаров в каталог ``` media/product_image/ ```, названия файлов в этой директории и в файле сsv должны быть одинаковы.
 
-### Развёртывание
+## Развёртывание
 
 https://www.digitalocean.com/community/tutorials/how-to-set-up-django-with-postgres-nginx-and-gunicorn-on-ubuntu-18-04#step-10-configure-nginx-to-proxy-pass-to-gunicorn
