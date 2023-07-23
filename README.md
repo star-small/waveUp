@@ -54,6 +54,7 @@ python3 manage.py createsuperuser
 
 ```bash
 # В папке waveUp/core, рядом с файлом manage.py
+mkdir media/
 mkdir media/product_image/
 # местоположение каталога может разниться в зависимости от настройки setting.py
 ```
