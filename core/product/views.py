@@ -1,5 +1,6 @@
 import os
 
+from django.views.generic import View
 from django.shortcuts import render, redirect
 # from django.contrib.auth.models import User
 # from .forms import UserForm
@@ -9,12 +10,9 @@ from .senders import AllSender
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-def show_main(request):
-    products = Product.objects.all().order_by("price")[0:5]
-    if request.method == "POST":
-        send_to_all_recources(request.POST)
-        return redirect("main_url")
-    return render(request, "index.html", context={"products": products})
+class PageRenderer(PageRendererMixin, View):
+    model = Product
+    obj = model.objects.all().order_by("price")[0:5]
 
 
 def show_products(request):
@@ -44,14 +42,6 @@ def show_products(request):
     )
 
 
-def show_contacts(request):
-    if request.method == "POST":
-        sender = AllSender(request.POST)
-        sender.send()
-        return redirect("show_contacts_url")
-    return render(request, "pages/contacts.html")
-
-
 def show_product(request, slug):
     product = Product.objects.get(slug=slug)
     if request.method == "POST":
@@ -59,19 +49,3 @@ def show_product(request, slug):
         sender.send()
         return redirect("product_url")
     return render(request, "pages/order.html", context={"product": product})
-
-
-def show_policy(request):
-    if request.method == "POST":
-        sender = AllSender(request.POST)
-        sender.send()
-        return redirect("policy_url")
-    return render(request, "pages/policy.html")
-
-
-def show_about_us(request):
-    if request.method == "POST":
-        sender = AllSender(request.POST)
-        sender.send()
-        return redirect("about_us_url")
-    return render(request, "pages/about_us.html")

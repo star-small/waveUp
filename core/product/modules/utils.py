@@ -3,8 +3,33 @@ import datetime
 from pathlib import Path
 import csv
 from django.utils.timezone import now
+from django.urls import resolve
+from django.shortcuts import render, redirect
+
+from ..senders import AllSender
 
 BASE_DIR = Path(__file__).resolve().parent.parent.parent  # /home/user/..../files/
+
+
+class PageRendererMixin:
+    model = None
+    obj = None
+
+    def get(self, request):
+        url = resolve(request.path_info).url_name  # url name from urlpattern
+        obj = self.model.objects.all() if not self.obj else self.obj
+        print(obj)
+        print(self.model.__name__.lower())
+        return render(
+            request,
+            "pages/" + url.rstrip("_url") + ".html",
+            context={self.model.__name__.lower() + "s": obj},
+        )
+
+    def post(self, request):
+        sender = AllSender(request.POST)
+        sender.send()
+        return redirect(resolve(request.path_info).url_name)
 
 
 def dict_to_db(values_dict):

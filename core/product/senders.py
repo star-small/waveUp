@@ -5,7 +5,6 @@ from dotenv import load_dotenv
 import telebot
 import os
 import collections
-
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
