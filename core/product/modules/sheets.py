@@ -37,8 +37,7 @@ class Table:
             valueInputOption="USER_ENTERED",
         ).execute()
 
-    def load_data(self, data):
-        time = datetime.datetime.now().strftime("%m/%d/%Y %H:%M")
+    def load_data(self, data, time):
         self.table_write([
             [data["name"]],
             [data["phone"]],
