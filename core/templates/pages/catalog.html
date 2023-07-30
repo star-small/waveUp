@@ -155,9 +155,10 @@
                         <p class="product_art">{{ product.vendor_code }}</p>
                     </div>
                     <div class="product_price mobile_font-size_regular font-weight_medium"></p><p class="product_art">  {{product.price.normalize}} тг.</p></div>
-                    {% if product.description|length > 1 %}
+                    {% if product.price_without_discount != 0 %}
+                    
                     <div>
-                        <p class="mobile_font-size_regular product_description">{{ product.description | truncatewords:5 }} тг.</p>
+                        <p class="mobile_font-size_regular product_description">{{ product.price_without_discount.normalize}} тг.</p>
                     </div>
                     {% endif %}
                 </div>

@@ -24,11 +24,13 @@ class Product(models.Model):
     vendor_code = models.CharField(max_length=30, unique=True, null=False)
     name = models.CharField(max_length=100)
     price = models.DecimalField(max_digits=16, decimal_places=3)
+    price_without_discount = models.DecimalField(
+        max_digits=16, decimal_places=3, blank=True
+    )
     date = models.DateTimeField(default=now())
     description = models.TextField(null=True, blank=True)
     image = models.ImageField(upload_to="product_image")
     slug = models.CharField(max_length=100, blank=False)
-    from_csv = models.BooleanField(default=False)
 
     def __str__(self):
         return self.name

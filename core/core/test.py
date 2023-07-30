@@ -1,3 +1,5 @@
 import os
+from dotenv import load_dotenv
 
-print(os.environ['SECRET_KEY'])
+load_dotenv("/etc/environment")
+print(os.environ["SECRET_KEY"])
