@@ -18,8 +18,6 @@ class PageRendererMixin:
     def get(self, request):
         url = resolve(request.path_info).url_name  # url name from urlpattern
         obj = self.model.objects.all() if not self.obj else self.obj
-        print(obj)
-        print(self.model.__name__.lower())
         return render(
             request,
             "pages/" + url.rstrip("_url") + ".html",
@@ -50,7 +48,6 @@ def dict_to_db(values_dict):
             else values["price_without_discount"]
         )
         if not Category.objects.filter(name=category).exists() and category != "":
-            print("ewf")
             Category.objects.create(name=category)
         values["category"] = (
             None if category == "" else Category.objects.get(name=category)
@@ -63,7 +60,6 @@ def read_from_csv():
     with open(BASE_DIR / "files/file.csv", newline="", encoding="utf-8-sig") as file:
         rows = list(csv.reader(file, dialect="excel", delimiter=";", quotechar="|"))
         model_fields = Product._meta.get_fields()[1:-1]
-        print(model_fields[-1].name)
         field_values = []
         for row in rows[1:]:
             field_values.append(

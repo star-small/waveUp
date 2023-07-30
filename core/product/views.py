@@ -23,7 +23,6 @@ def show_products(request):
     if request.method == "POST":
         data = request.POST
         if data.get("filter"):
-            print(data)
             category_list = data.getlist("filter")
             filtered = products.filter(category__name__in=category_list)
             return render(
