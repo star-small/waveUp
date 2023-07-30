@@ -34,7 +34,7 @@ class PageRendererMixin:
 
 def dict_to_db(values_dict):
     for values in values_dict:
-        if Product.objects.filter(vendor_code=values["vendor_code"]).exists:
+        if Product.objects.filter(vendor_code=values["vendor_code"]).exists():
             continue
 
         # Validation
@@ -50,21 +50,23 @@ def dict_to_db(values_dict):
             else values["price_without_discount"]
         )
         if not Category.objects.filter(name=category).exists() and category != "":
+            print("ewf")
             Category.objects.create(name=category)
         values["category"] = (
             None if category == "" else Category.objects.get(name=category)
         )
 
+        Product.objects.create(**values)
+
 
 def read_from_csv():
     with open(BASE_DIR / "files/file.csv", newline="", encoding="utf-8-sig") as file:
         rows = list(csv.reader(file, dialect="excel", delimiter=";", quotechar="|"))
-        model_fields = Product._meta.get_fields()[1:-2]
+        model_fields = Product._meta.get_fields()[1:-1]
+        print(model_fields[-1].name)
         field_values = []
-
-        for row in rows:
-            print(len(row))
+        for row in rows[1:]:
             field_values.append(
-                dict([(model_fields[i].name, row[i]) for i in range(len(row) - 1)])
+                dict([(model_fields[i].name, row[i]) for i in range(len(row))])
             )
     return field_values
