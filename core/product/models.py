@@ -25,7 +25,7 @@ class Product(models.Model):
     name = models.CharField(max_length=100)
     price = models.DecimalField(max_digits=16, decimal_places=3)
     price_without_discount = models.DecimalField(
-        max_digits=16, decimal_places=3, blank=True
+        max_digits=16, decimal_places=3, blank=True, default=0
     )
     date = models.DateTimeField(default=now())
     description = models.TextField(null=True, blank=True)
