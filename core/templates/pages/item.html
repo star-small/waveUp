@@ -1,0 +1,143 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novella Electric | Главная</title>
+        <link rel="shortcut icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/main.css' %}">
+        <link rel="stylesheet" href="{% static 'css/splide.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/aos.css' %}">
+        <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+        <script src="{% static 'js/main.js' %}"></script>
+</head>
+<body>
+
+
+
+<!--Modal block-->
+<div class="modal_order" id="modal_block">
+    <div class="modal_order__inner">
+        <button onclick="modal_open()"><img src=" {% static 'img/icon/cancel_icon.svg' %}" alt=""></button>
+        <h4>Оставьте заявку для заказа!</h4>
+        <p id="modal_order__status" class=" mobile_font-size_big">Успешно отправлено!</p>
+        <form method="POST" id="modal_form" action="">
+        {% csrf_token %}
+        <input type="hidden" name="vendor_code" value="{{product.vendor_code}}" />
+        <input type="hidden" name="code" value="{{product.code}}" />
+        <input type="hidden" name="product_name" value="{{product.name}}" />
+            <input class="mobile_font-size_big" type="text" name="name" id="" placeholder="Ваше имя" required>
+            <input class="mobile_font-size_big" type="email" name="email" id="" placeholder="Почта">
+            <input class="mobile_font-size_big" type="tel" name="phone" id="" placeholder="Номер телефона" required>
+            <input class="mobile_font-size_big" type="submit" value="Отправить">
+        </form>
+    </div>
+</div>
+<!--------------->
+
+
+<div data-aos="fade-down" class="row header item_page pdng-width">
+    <div class="col-xl-4 d-none d-xl-flex logo_block">
+        <a href="../index.html"><img src="{% static 'img/icon/logo.svg' %}" alt=""></a>
+    </div>
+    <div class="col-12 d-flex d-xl-none burger_block">
+        
+        <div class="burger_block__inner" id="burger_block">
+            <input class="checkbox" type="checkbox" name="" id="" />
+            <div class="hamburger-lines">
+              <span class="line line1"></span>
+              <span class="line line2"></span>
+              <span class="line line3"></span>
+            </div>  
+          <div class="menu-items">
+            <li><a class="font-weight_semibold mobile_font-size_huge" href="../index.html">Главная</a></li>
+            <li><a class="font-weight_semibold mobile_font-size_huge" href="catalog.html">Каталог</a></li>
+            <li><a class="font-weight_semibold mobile_font-size_huge" href="about_us.html">О нас</a></li>
+            <li><a class="font-weight_semibold mobile_font-size_huge" href="contacts.html">Контакты</a></li>
+            <button onclick="modal_open()" class="mobile_font-size_huge font-weight_bold">Заказать</button>
+        </div>
+        </div>
+        
+    </div>
+    <div class="col-xl-4 d-none d-xl-flex menu">
+        <li>
+            <a class="font-size_small font-weight_regular" href="catalog.html">Каталог</a>
+            <a class="font-size_small font-weight_regular margin-side" href="about_us.html">О нас</a>
+            <a class="font-size_small font-weight_regular" href="contacts.html">Контакты</a>
+        </li>
+    </div>
+    <div class="col-xl-4 d-none d-xl-flex order_block">
+        <button onclick="modal_open()" class="font-size_small font-weight_bold">Заказать</button>
+    </div>
+</div>
+
+    <div class="row item_block">
+        <div class="col-xl-6 item_block__image">
+            
+                        <img style="width: 100vh;height: 100vh" src="{{ product.image.url }}" alt="">
+        </div>
+        <div class="col-xl-6 item_block__specs">
+            <h2>{{product.name}}</h2>
+            <br>
+            <h4>{{product.vendor_code}}</h3>
+                <br>
+            <div class="mobile_font-size_regular">
+                {{product.description}}
+            </div>
+
+            <p class="font-size_semi-header mobile_font-size_big">Цена: <a href="">{{ product.price.normalize}}тг.</a></p>
+            <br><br>
+            <button onclick="modal_open()" class="mobile_font-size_huge font-weight_bold">Заказать</button>
+        </div>
+    </div>
+    
+
+        <div class="row footer">
+            <div class="col-6 col-xl-5 footer_logo">
+                <img src="{% static 'img/icon/logo_full_orng.svg' %}" alt="">
+                <div class="footer__policy">
+                    <p class="font-size_tiny font-weight_light mobile_font-size_light">Все права защищены</p>
+                    <a class="font-size_tiny font-weight_light mobile_font-size_light" href="policy.html">Политика конфиденциальности</a>
+                    <a class="font-size_tiny font-weight_light wave_up mobile_font-size_light" href="">Сделано студией WAVEUP</a>
+                </div>
+                <div class="footer_menu__inner d-flex d-xl-none">
+                    <h4 class="font-weight_bold mobile_font-size_light margin-bottom">О нас</h4>
+                    <a class="font-weight_light mobile_font-size_light" href="contacts.html">Контакты</a>
+                </div>
+            </div>
+            <div class="col-6 col-xl-7 footer_menu">
+                <div class="footer_menu__inner">
+                    <h4 class="font-weight_bold margin-bottom mobile_font-size_light">Наши магазины</h4>
+                    <li>
+                        <a class="font-weight_light mobile_font-size_light" href="https://goo.gl/maps/phCLkgbMNvENTPTn9">г. Алматы,<br class="d-none d-xl-flex">ТД Бакорда Строй Сити</a>
+                    </li>
+                </div>
+                <div class="footer_menu__inner margin-side">
+                    <h4 class="font-weight_bold mobile_font-size_light margin-bottom">Каталог</h4>
+                    <a class="font-weight_light mobile_font-size_light" href="catalog.html">Весь каталог</a>
+                </div>
+                <div class="footer_menu__inner d-none d-xl-flex">
+                    <h4 class="font-weight_bold margin-bottom">О нас</h4>
+                    <a class="font-weight_light" href="contacts.html">Контакты</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Animation Scroll-->
+<script>
+    AOS.init({
+        disable: function() {
+    var maxWidth = 800;
+    return window.innerWidth < maxWidth;
+  }
+    });
+
+</script>
+<!-------------------->
+</body>
+</html>

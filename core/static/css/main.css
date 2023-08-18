@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&display=swap');
 
+
 body{
     font-family: 'Jost', sans-serif;
     font-size: calc(25vw / 19.2);
@@ -1735,4 +1736,58 @@ h4{font-size: calc(20vw / 3.9);}
     padding: 6vw 0;
 }
 
+}
+
+
+
+/*Items Block*/
+
+    .header.item_page{
+        background-color: #2d2d2d;
+    }
+
+    .item_block{
+        
+    }
+
+    .item_block__image{
+        background-color: #D8D8D8;
+        height: 100vh;
+    }
+
+    .item_block__specs{
+        padding: 2vw 2vw 5vw;
+    }
+
+    .item_block__specs h4{
+        color: #747474 ;
+    }
+
+    .item_block__specs p{
+        margin: 5vw 0 0 0;
+    }
+
+    .item_block__specs p a{
+
+        font-weight: 500;
+        color: #FF9E18;
+        text-decoration: underline;
+    }
+
+    .item_block button {
+        padding: 0.41vw 3.22vw;
+        border: 0;
+        background-color: var(--main-color);
+    }
+/*
+
+@media (max-width: 1200px) {
+
+.item_block__image{
+    height: 50vh;
+}
+
+.item_block__specs{
+    padding: 10vw;
+}
 }

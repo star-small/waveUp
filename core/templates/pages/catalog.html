@@ -52,7 +52,6 @@
 </div>
 <!--------------->
 
-
     <div class="filter_block d-none d-xl-flex" id="filter_block" style="z-index:2;">
         <p class="font-weight_medium">Категория</p>
         <form action="" method="POST">
@@ -70,7 +69,7 @@
  <div class="container-fluid main_screen">
             <div data-aos="fade-down" class="row header pdng-width">
                 <div class="col-xl-4 d-none d-xl-flex logo_block">
-                    <a href="{% url 'main_url' %}">
+            <a href="{% url 'main_url' %}">
                         <img src="{% static 'img/icon/logo.svg' %}" alt="">
                     </a>
                 </div>
@@ -138,7 +137,7 @@
                 {% csrf_token %}
                 {% for category in categories %}
                 
-            <div><label for="">{{category.name}}</label><input name="filter" type="checkbox" value="{{category.name}}"></div>
+            <div><label href="" for="">{{category.name}}</label><input name="filter" type="checkbox" value="{{category.name}}"></div>
                 {% endfor %}
                 <input type="submit" value="Применить" name="filter">
             </form>
@@ -149,7 +148,7 @@
                     <div class="product_img">
                         <img class="img_reg" src="{{ product.image.url }}" alt="">
                     </div>
-                    <p class="product_name mobile_font-size_regular font-weight_medium">{{ product.name }}</p>
+                    <p class="product_name mobile_font-size_regular font-weight_medium"> <a style="color: black" href="{% url 'product_url' slug=product.slug %}">{{ product.name }}</a> </p>
                     <div class="product__art_block font-weight_light font-size_tiny mobile_font-size_light">
                         <p>Артикул:</p>
                         <p class="product_art">{{ product.vendor_code }}</p>

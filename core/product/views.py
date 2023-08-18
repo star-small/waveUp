@@ -45,6 +45,7 @@ def show_product(request, slug):
     product = Product.objects.get(slug=slug)
     if request.method == "POST":
         sender = AllSender(request.POST)
+        print(request.POST)
         sender.send()
-        return redirect("product_url")
-    return render(request, "pages/order.html", context={"product": product})
+        return redirect("catalog_url")
+    return render(request, "pages/item.html", context={"product": product})

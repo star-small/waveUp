@@ -20,6 +20,8 @@ class Sender:
         self.data = data
         self.base_dir = Path(__file__).resolve().parent.parent.parent
         self.message_body = f'Имя клиента: {self.data["name"]}\nДата: {self.time}\nНомер телефона: {self.data["phone"]}\nПочта: {self.data["email"]}\nАртикул: {self.data.get("vendor_code", "N/A")}\nКод товара: {self.data.get("code", "N/A")}\nНазвание товара: {self.data.get("product_name", "N/A")}'
+        print(self.data)
+        print(self.data.get("product_name"))
 
     def send():
         raise NotImplementedError(
@@ -34,9 +36,9 @@ class Sender:
 
 class TelegramSender(Sender):
 
-    def __init__(self, data):
-        super().__init__(data)
-        self.message_body = f'Имя клиента: {self.data["name"]}\nДата: {self.time}\nНомер телефона: {self.data["phone"]}\nПочта: {self.data["email"]}'
+    # def __init__(self, data):
+    #     super().__init__(data)
+    #     self.message_body = f'Имя клиента: {self.data["name"]}\nДата: {self.time}\nНомер телефона: {self.data["phone"]}\nПочта: {self.data["email"]}'
 
     def send(self):
         API_TOKEN = os.getenv("API_TOKEN")
