@@ -77,9 +77,15 @@
 </div>
 
     <div class="row item_block">
-        <div class="col-xl-6 item_block__image">
-            
-                        <img style="width: 100vh;height: 100vh" src="{{ product.image.url }}" alt="">
+        <!-- <div class="col-xl-6 item_block__image"> -->
+        <!--      -->
+        <!--                 <img style="width: auto;height: auto" src="{{ product.image.url }}" alt=""> -->
+
+<div class="col-xl-6 item_block__image">
+
+    <img style="width: auto;height: auto;" src="{{product.image.url}}">
+
+
         </div>
         <div class="col-xl-6 item_block__specs">
             <h2>{{product.name}}</h2>
